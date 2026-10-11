@@ -1,0 +1,91 @@
+name: Export Localizations
+
+# 仅导出本地化字符串，不做完整构建。
+#
+# 背景：项目有 9 个 storyboard + 14 个 xib，这些界面文件的静态文本
+# 不走 Localizable.strings，必须每个界面文件一份 <Name>.strings，
+# 且 key 是 Interface Builder 的 ObjectID（如 "3Xk-9Z-XXX.text"），
+# 只能由 ibtool / xcodebuild 生成，Windows 本地无此工具。
+#
+# 产物（artifact "localizations-export"）：
+#   export/en.xcloc/                  xcodebuild 导出的完整本地化包
+#   export/storyboards/<Name>.strings 每个 storyboard/xib 的 ObjectID key 表
+#   export/bundle-map.txt             界面文件在工程中的路径（用于确定 .strings 放置位置）
+#
+# 用法：Actions → Export Localizations → Run workflow → 下载 artifact
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: macos-26
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1.7.0
+        with:
+          xcode-version: '26.2'
+
+      # ---- 主路径：xcodebuild 导出完整本地化包 ----
+      - name: Export localizations (xcodebuild)
+        run: |
+          mkdir -p export
+          set +e
+          xcodebuild -exportLocalizations \
+            -project AltStore.xcodeproj \
+            -localizationPath export \
+            -exportLanguage en 2>&1 | tail -30
+          echo "--- exit: $? ---"
+          find export -type f | sort
+
+      # ---- 辅路径：ibtool 逐个导出 ObjectID key 表 ----
+      # 这一步更可靠，且产物格式就是最终要翻译的 <Name>.strings
+      - name: Export per-interface-file strings (ibtool)
+        run: |
+          mkdir -p export/storyboards
+          for f in $(find AltStore -name "*.storyboard" -not -path "*/tvOS/*" | sort); do
+            name=$(basename "$f" .storyboard)
+            echo ">>> $name"
+            ibtool --export-strings-file "export/storyboards/$name.strings" "$f" \
+              && echo "    ok" || echo "    FAILED"
+          done
+          for f in $(find AltStore -name "*.xib" -not -path "*/tvOS/*" | sort); do
+            name=$(basename "$f" .xib)
+            echo ">>> $name"
+            ibtool --export-strings-file "export/storyboards/$name.strings" "$f" \
+              && echo "    ok" || echo "    FAILED"
+          done
+          echo "=== 生成的文件 ==="
+          wc -l export/storyboards/*.strings 2>/dev/null || echo "(无)"
+
+      # ---- 界面文件路径清单 ----
+      # 工程用 Xcode 16 folder-synchronized groups，子目录结构会保留到 bundle，
+      # 需要据此决定 zh-Hans.lproj 下 .strings 的放置位置。
+      - name: Dump interface file map
+        run: |
+          {
+            echo "# Interface files (iOS only) and their project paths"
+            echo "# 用于确定 AltStore/zh-Hans.lproj/ 下各 .strings 的放置位置"
+            echo ""
+            find AltStore -name "*.storyboard" -not -path "*/tvOS/*" | sort
+            echo ""
+            find AltStore -name "*.xib" -not -path "*/tvOS/*" | sort
+          } > export/bundle-map.txt
+          cat export/bundle-map.txt
+
+      - name: Upload export
+        uses: actions/upload-artifact@v5
+        with:
+          name: localizations-export
+          path: export/
+          retention-days: 30
+          if-no-files-found: error

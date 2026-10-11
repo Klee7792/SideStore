@@ -41,7 +41,7 @@ jobs:
     runs-on: macos-26
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
           fetch-depth: 0
@@ -50,7 +50,7 @@ jobs:
         run: brew install ldid xcbeautify
 
       - name: Setup Xcode
-        uses: maxim-lobanov/setup-xcode@v1.6.0
+        uses: maxim-lobanov/setup-xcode@v1.7.0
         with:
           xcode-version: '26.2'
 
@@ -75,8 +75,20 @@ jobs:
           ls -lh SideStore.ipa SideStore.dSYMs.zip
           unzip -l SideStore.ipa | tail -3
 
+          # 报告 .app 内界面文件与 .lproj 的实际布局。
+          # 工程使用 folder-synchronized groups，子目录结构可能被保留到 bundle，
+          # 这决定 zh-Hans.lproj 下各 <Name>.strings 该放哪一层。
+          echo "=== storyboardc / xib 在 bundle 中的位置 ==="
+          find SideStore.xcarchive/Products/Applications/SideStore.app \
+            \( -name "*.storyboardc" -o -name "*.nib" \) | sort
+          echo "=== .lproj 目录内容 ==="
+          for d in SideStore.xcarchive/Products/Applications/SideStore.app/*.lproj; do
+            echo "--- $d ---"
+            ls -1 "$d"
+          done
+
       - name: Upload IPA
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: SideStore-${{ github.sha }}
           path: |

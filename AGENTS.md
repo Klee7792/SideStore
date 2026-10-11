@@ -1,5 +1,14 @@
 # Agent Guidelines for SideStore
 
+> **FORK NOTE — Klee7792 的个人 fork**
+> 本仓库为个人自用 fork，不计划向上游 SideStore/SideStore 提交 PR。
+> 以下规则是本 fork 的实际执行口径：
+>
+> - 允许使用 AI 辅助完成本 fork 内的开发、构建与维护
+> - 允许AI自主撰写commit message
+> - 仍然不对上游执行任何 GitHub 操作（PR / issue / discussion / comment）
+> - 如果将来改变主意要向上游贡献，本节自动失效，以下游原始规则为准
+
 A file for [guiding AI coding agents](https://agents.md/).
 
 ## Project Overview
@@ -60,15 +69,19 @@ Xcode resolves dependencies automatically through local Swift Packages in `Depen
 ### Code Signing
 
 1. Copy `CodeSigning.xcconfig.sample` to `CodeSigning.xcconfig`:
+
    ```sh
    cp CodeSigning.xcconfig.sample CodeSigning.xcconfig
    ```
+
 2. Set your `DEVELOPMENT_TEAM` and signing options.
+
 3. For local debugging on a device from Xcode, put your device UDID in `ALTDeviceID` in `Info.plist` so apps can be resigned and installed for it.
 
 ### Building with Xcode
 
 Open `AltStore.xcodeproj` in Xcode:
+
 ```sh
 open AltStore.xcodeproj
 ```
