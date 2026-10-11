@@ -65,7 +65,7 @@ struct OperationsLoggingControlView: View {
                         .padding(.horizontal, 16)
                     
                     VStack(spacing: 0) {
-                        ForEach(Array(standaloneStepToggles.enumerated()), id: \.element.name) { index, entry in
+                        ForEach(Array(standaloneStepToggles.enumerated()), id: \.element.step) { index, entry in
                             if index > 0 {
                                 divider
                             }
@@ -84,7 +84,7 @@ struct OperationsLoggingControlView: View {
                         .padding(.horizontal, 16)
                     
                     VStack(spacing: 0) {
-                        ForEach(Array(pipelineStepToggles.enumerated()), id: \.element.name) { index, entry in
+                        ForEach(Array(pipelineStepToggles.enumerated()), id: \.element.step) { index, entry in
                             if index > 0 {
                                 divider
                             }
