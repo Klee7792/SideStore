@@ -216,7 +216,55 @@ python scripts/i18n/validate_strings.py          # 五道质量关卡，输出 I
 
 ---
 
-## 6. 待办（本期未覆盖）
+## 6. 开发者界面术语（Anisette / 证书 / SideSign / 日志）
+
+这一批来自 `LocalizedStringKey` 重构后新增的 138 条 key，全部是面向开发者的
+技术字段与开关。**首轮翻译已定稿**，后续改动前先查这里。
+
+| English | 简体中文 | 说明 |
+| --- | --- | --- |
+| Serial Number | 序列号 | |
+| Public Key | 公钥 | |
+| Signature Algorithm | 签名算法 | |
+| Issuer | 颁发者 | X.509 字段 |
+| Subject | 主题 | X.509 字段 |
+| Has Private Key | 包含私钥 | |
+| Auto-Rotation | 自动轮换 | 证书自动轮换 |
+| Managed | 托管 | 证书是否由 Xcode Cloud 托管 |
+| Validity Days | 有效天数 | |
+| Valid From / Valid Until | 生效日期 / 失效日期 | |
+| One-Time Password (OTP) | 一次性密码（OTP） | |
+| User Agent | 用户代理 | HTTP 头 |
+| Client Info | 客户端信息 | |
+| Device Identifier | 设备标识符 | |
+| Local User ID | 本地用户 ID | |
+| Routing Info | 路由信息 | |
+| Machine ID | 机器 ID | |
+| Locale | 语言区域 | |
+| Time Zone | 时区 | |
+| Xcode Version | Xcode 版本 | |
+| Preflight Checks | 预检 | 安装前检查 |
+| Checksum | 校验和 | |
+| Verbose Logging | 详细日志 | `SideStore Verbose Logging` → `SideStore 详细日志` |
+| Stage / Staged App | 暂存 / 暂存应用 | 安装流水线里的中转态 |
+| Keepalive | 保活 | `Enable Background Keepalive` → `启用后台保活` |
+| sheet | sheet | iOS 模态展示样式，与 `dialog`（对话框）对举时保留原文 |
+| Shortcuts | 快捷指令 | 指 Apple「快捷指令」App |
+| Cellular data | 蜂窝数据 | |
+
+**保留英文的 3 条**（均为全大写协议名或 Apple 头名，不是散文）：
+
+* `APPLE AUTH (IDMSA)`
+* `GRANDSLAM AUTH (GSA)`
+* `App ID Key`（IDMS 头名，与既有 `App ID` 的处理保持一致）
+
+**section header 的大小写规则在本批同样生效**：被译成中文的
+（`DEVICE & IDENTITY` → `设备与身份`、`ACTIONS` → `操作`）没有大小写问题；
+保留英文的 3 条按第 2 节规则原样保留。
+
+---
+
+## 7. 待办（本期未覆盖）
 
 * **xib 文本（6 条，本期不生效）**：UIKit nib 的文本走 `<NibName>.strings`
   （每张 nib 一张表），不是 `Localizable.strings`。`Localizable.strings` 末尾那 6 条
@@ -237,7 +285,7 @@ python scripts/i18n/validate_strings.py          # 五道质量关卡，输出 I
 
 ---
 
-## 7. 维护流程
+## 8. 维护流程
 
 1. 改 `scripts/i18n/translations_zh_Hans.tsv`（`key <TAB> 译文`，UTF-8）。
 2. 若该条目有意保留英文，同时把 key 加进 `scripts/i18n/keep_english.txt`。

@@ -88,10 +88,20 @@ r = p('bare = "v";')
 check("bare token rejected (strict mode)", bool(r.errors), True)
 
 print("\n-- parser: real file smoke --")
+# NOTE: do NOT hard-code the entry count here.  This is a self-test of *the parser*, and
+# the number of localizable keys legitimately changes whenever the extraction rules grow
+# (1151 -> 1286 when the SwiftUI helper refactor landed).  A magic number here turns a
+# healthy project into a false "QA tooling is unreliable" alarm.
+# The deliverable-level count checks live in qa_checks.py (count consistency vs
+# extracted.json) and are re-derived from the pipeline on every run.
 pairs, _ = __import__("strings_syntax").parse_file(
     os.path.join(HERE, "..", "..", "..", "AltStore", "zh-Hans.lproj", "Localizable.strings")
 )
-check("Localizable.strings parses clean", (pairs.ok, len(pairs.entries)), (True, 1151))
+check("Localizable.strings parses clean", pairs.ok, True)
+check("Localizable.strings has entries", len(pairs.entries) > 0, True)
+check("Localizable.strings has no duplicate keys", pairs.duplicate_keys, [])
+print(f"  info: Localizable.strings currently holds {len(pairs.entries)} entries "
+      f"(not asserted - see comment)")
 
 # ------------------------------------------------------- placeholder extractor
 

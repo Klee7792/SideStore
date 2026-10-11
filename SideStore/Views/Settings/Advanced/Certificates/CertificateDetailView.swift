@@ -335,7 +335,7 @@ struct CertificateDetailView: View {
         return formatter.string(from: date)
     }
     
-    private func detailRow(title: String, value: String) -> some View {
+    private func detailRow(title: LocalizedStringKey, value: String) -> some View {
         HStack {
             Text(title)
                 .font(.subheadline)
@@ -351,7 +351,7 @@ struct CertificateDetailView: View {
         }
     }
     
-    private func detailRowWithCopy(title: String, value: String, isCopied: Binding<Bool>) -> some View {
+    private func detailRowWithCopy(title: LocalizedStringKey, value: String, isCopied: Binding<Bool>) -> some View {
         HStack {
             Text(title)
                 .font(.subheadline)

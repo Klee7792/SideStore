@@ -136,6 +136,9 @@
 /* SwiftUI Text */
 "About" = "关于";
 
+/* SwiftUI toggleRow(title) */
+"Accept IPv6 Config" = "接受 IPv6 配置";
+
 /* No comment provided by engineer. */
 "ACCOUNT" = "账户";
 
@@ -153,6 +156,9 @@
 
 /* SwiftUI Text */
 "Action Required" = "需要操作";
+
+/* SwiftUI sectionHeader */
+"ACTIONS" = "操作";
 
 /* SwiftUI Text */
 "Actions" = "操作";
@@ -271,6 +277,9 @@
 /* SwiftUI Text */
 "All permitted account entitlements have been added." = "已添加账户允许的全部权限。";
 
+/* SwiftUI sectionHeader(title) */
+"ALL RAW KEYS" = "全部原始键";
+
 /* SwiftUI Text */
 "Allows Files app to edit documents directly" = "允许“文件”应用直接编辑文稿";
 
@@ -320,6 +329,9 @@
 /* No comment provided by engineer. */
 "app extensions" = "应用扩展";
 
+/* SwiftUI toggleRow(title) */
+"App File Size Check" = "应用文件大小校验";
+
 /* No comment provided by engineer. */
 "App Group Container Inaccessible" = "无法访问 App Group 容器";
 
@@ -352,8 +364,15 @@
 /* SwiftUI Text */
 "App ID Information" = "App ID 信息";
 
+/* SwiftUI headerFieldRow(title) */
+/* DO NOT TRANSLATE */
+"App ID Key" = "App ID Key";
+
 /* SwiftUI Text */
 "App ID Metadata" = "App ID 元数据";
+
+/* SwiftUI sectionHeader(title) */
+"APP IDENTITY" = "应用身份";
 
 /* SwiftUI navigationTitle */
 /* DO NOT TRANSLATE */
@@ -371,6 +390,9 @@
 /* SwiftUI Text */
 "APP VERIFICATION" = "应用验证";
 
+/* SwiftUI toggleRow(title) */
+"App Version Check" = "应用版本校验";
+
 /* SwiftUI Text */
 "APPEARANCE & THEMES" = "外观与主题";
 
@@ -382,6 +404,10 @@
 
 /* No comment provided by engineer. */
 "AppID Customization" = "AppID 自定义";
+
+/* SwiftUI sectionHeader */
+/* DO NOT TRANSLATE */
+"APPLE AUTH (IDMSA)" = "APPLE AUTH (IDMSA)";
 
 /* No comment provided by engineer. */
 "Apple Devices" = "Apple 设备";
@@ -443,11 +469,32 @@
 /* No comment provided by engineer. */
 "At least one app" = "至少一个应用";
 
+/* SwiftUI headerFieldRow(title) */
+"Auth App" = "认证应用";
+
 /* No comment provided by engineer. */
 "Authenticated" = "已认证";
 
 /* SwiftUI Text */
 "Auto Discovered from network" = "从网络自动发现";
+
+/* SwiftUI toggleRow(title) */
+"Auto Retry RemotePairing Port" = "自动重试 RemotePairing 端口";
+
+/* SwiftUI toggleRow(title) */
+"Auto-Fix AppGroup IDs" = "自动修正 AppGroup ID";
+
+/* SwiftUI toggleRow(title) */
+"Auto-Launch App After Install" = "安装后自动打开应用";
+
+/* SwiftUI detailRow(title) */
+"Auto-Rotation" = "自动轮换";
+
+/* SwiftUI toggleRow(subtitle) */
+"Automatically open apps after installation completes" = "安装完成后自动打开应用";
+
+/* SwiftUI toggleRow(subtitle) */
+"Automatically toggle cellular data via Shortcuts during refresh" = "刷新期间通过“快捷指令”自动开关蜂窝数据";
 
 /* SwiftUI Text */
 "Available Servers" = "可用服务器";
@@ -464,6 +511,9 @@
 /* SwiftUI Text */
 "Background Modes" = "后台模式";
 
+/* SwiftUI standaloneStepToggles entry */
+"Background Refresh Apps" = "后台刷新应用";
+
 /* SwiftUI Text */
 "BACKGROUND SERVICE" = "后台服务";
 
@@ -478,6 +528,15 @@
 
 /* SwiftUI navigationTitle */
 "Backup & Restore" = "备份与恢复";
+
+/* SwiftUI pipelineStepToggles entry */
+"Backup App Data" = "备份应用数据";
+
+/* SwiftUI textFieldRow(subtitle) */
+"Base wait time after turning off data (seconds, ≥ 0)" = "关闭数据后的基础等待时间（秒，≥ 0）";
+
+/* SwiftUI textFieldRow(subtitle) */
+"Base wait time after turning on data (seconds, ≥ 0)" = "打开数据后的基础等待时间（秒，≥ 0）";
 
 /* No comment provided by engineer. */
 "BETA TESTING" = "测试版体验";
@@ -507,8 +566,14 @@
 /* DO NOT TRANSLATE */
 "Bundle Identifier" = "Bundle Identifier";
 
+/* SwiftUI toggleRow(title) */
+"Bundle Identifier Check" = "Bundle Identifier 校验";
+
 /* SwiftUI Text */
 "Bundle Metadata" = "Bundle 元数据";
+
+/* SwiftUI pipelineStepToggles entry */
+"Cache App" = "缓存应用";
 
 /* SwiftUI navigationTitle */
 "Cache Management" = "缓存管理";
@@ -540,6 +605,9 @@
 /* No comment provided by engineer. */
 "Cannot Send Mail" = "无法发送邮件";
 
+/* SwiftUI sectionHeader(title) */
+"CAPABILITIES & SHARING" = "能力与共享";
+
 /* No comment provided by engineer. */
 /* DO NOT TRANSLATE */
 "CarPlay" = "CarPlay";
@@ -553,8 +621,14 @@
 /* SwiftUI Text */
 "CELLULAR REFRESH" = "蜂窝网络刷新";
 
+/* SwiftUI toggleRow(title) */
+"Cellular Refresh" = "蜂窝数据刷新";
+
 /* SwiftUI navigationTitle */
 "Certificate Details" = "证书详情";
+
+/* SwiftUI detailRowWithCopy(title) */
+"Certificate ID" = "证书 ID";
 
 /* SwiftUI Text */
 "Certificate Information" = "证书信息";
@@ -568,7 +642,7 @@
 /* No comment provided by engineer. */
 "Certificate Setup Skipped" = "已跳过证书设置";
 
-/* SwiftUI Picker */
+/* SwiftUI detailRow(title) */
 "Certificate Type" = "证书类型";
 
 /* SwiftUI navigationTitle */
@@ -577,7 +651,7 @@
 /* SwiftUI Text */
 "Certificates registered on your Apple Developer team. Revoking invalidates the certificate on Apple's portal." = "在你的 Apple 开发者团队中注册的证书。吊销后该证书将在 Apple 网站上失效。";
 
-/* No comment provided by engineer. */
+/* SwiftUI pipelineStepToggles entry */
 "Change App Icon" = "更改 App 图标";
 
 /* No comment provided by engineer. */
@@ -600,6 +674,9 @@
 
 /* SwiftUI Label */
 "Check Version Info (/ver/)" = "检查版本信息（/ver/）";
+
+/* SwiftUI toggleRow(title) */
+"Checksum (SHA-256) Check" = "校验和（SHA-256）校验";
 
 /* UIAlertController message */
 "Choose a method to send feedback:" = "选择发送反馈的方式：";
@@ -640,14 +717,23 @@
 /* No comment provided by engineer. */
 "Classic" = "经典";
 
+/* SwiftUI pipelineStepToggles entry */
+"Clean Staged App" = "清理暂存应用";
+
 /* SwiftUI Button */
 "Clear" = "清除";
 
 /* SwiftUI Button */
 "Clear All" = "全部清除";
 
+/* SwiftUI standaloneStepToggles entry */
+"Clear App Cache" = "清除应用缓存";
+
 /* No comment provided by engineer. */
 "Clear Cache" = "清除缓存";
+
+/* SwiftUI toggleRow(title) */
+"Clear Customizations on Uninstall" = "卸载时清除自定义设置";
 
 /* No comment provided by engineer. */
 "Clear Error Log" = "清除错误日志";
@@ -682,6 +768,15 @@
 /* SwiftUI navigationTitle */
 "Client Config" = "客户端配置";
 
+/* SwiftUI headerFieldRow(title) */
+"Client ID" = "客户端 ID";
+
+/* SwiftUI headerFieldRow(title) */
+"Client Info" = "客户端信息";
+
+/* SwiftUI infoTokenRow(title) */
+"Client Time" = "客户端时间";
+
 /* SwiftUI Button */
 "Close" = "关闭";
 
@@ -705,6 +800,9 @@
 
 /* No comment provided by engineer. */
 "Confirm" = "确认";
+
+/* SwiftUI toggleRow(title) */
+"Confirm App Installation" = "安装前确认";
 
 /* No comment provided by engineer. */
 "Confirm applying this certificate:" = "确认应用此证书：";
@@ -841,8 +939,14 @@
 /* No comment provided by engineer. */
 "Create Backup" = "创建备份";
 
+/* SwiftUI pipelineStepToggles entry */
+"Create IPA" = "创建 IPA";
+
 /* SwiftUI Button */
 "Create on Developer Portal" = "在开发者网站创建";
+
+/* SwiftUI detailRow(title) */
+"Created By" = "创建者";
 
 /* SwiftUI Text */
 "Created By: " = "创建者：";
@@ -865,8 +969,11 @@
 /* SwiftUI Text */
 "Customization" = "自定义";
 
-/* No comment provided by engineer. */
+/* SwiftUI toggleRow(title) */
 "Customize App Icon" = "自定义 App 图标";
+
+/* SwiftUI toggleRow(title) */
+"Customize AppID" = "自定义 AppID";
 
 /* SwiftUI navigationTitle */
 "Customize Entitlements" = "自定义权限";
@@ -876,6 +983,9 @@
 
 /* SwiftUI navigationTitle */
 "Customize Info.plist" = "自定义 Info.plist";
+
+/* SwiftUI toggleRow(title) */
+"Customize Provisioning Profile" = "自定义描述文件";
 
 /* No comment provided by engineer. */
 "Customize the AppID if required and press 'Confirm' to proceed." = "如需要请自定义 AppID，然后轻点“确认”继续。";
@@ -897,6 +1007,9 @@
 
 /* No comment provided by engineer. */
 "Deactivate %@ Failed" = "停用 %@ 失败";
+
+/* SwiftUI pipelineStepToggles entry */
+"Deactivate App" = "停用应用";
 
 /* SwiftUI alert */
 "Deactivate Certificate" = "停用证书";
@@ -1030,11 +1143,20 @@
 /* SwiftUI Text */
 "Developer Portal Services" = "开发者网站服务";
 
+/* SwiftUI sectionHeader */
+"DEVELOPER SERVICES" = "开发者服务";
+
+/* SwiftUI sectionHeader */
+"DEVICE & IDENTITY" = "设备与身份";
+
 /* SwiftUI Text */
 "DEVICE (TCP) PROBE TIMEOUT" = "设备（TCP）探测超时";
 
 /* SwiftUI Text */
 "Device Details" = "设备详情";
+
+/* SwiftUI headerFieldRow(title) */
+"Device Identifier" = "设备标识符";
 
 /* SwiftUI Text */
 "Device Identifier (UDID)" = "设备标识符（UDID）";
@@ -1084,11 +1206,17 @@
 /* SwiftUI Label */
 "Disable" = "停用";
 
+/* SwiftUI toggleRow(title) */
+"Disable All Verifications" = "停用全部校验";
+
 /* SwiftUI Label */
 "Disable Device" = "停用设备";
 
 /* SwiftUI Text */
 "Disable Device?" = "停用设备？";
+
+/* SwiftUI toggleRow(title) */
+"Disable URL Response Caching" = "停用 URL 响应缓存";
 
 /* SwiftUI Text */
 "Disabled" = "已停用";
@@ -1145,6 +1273,9 @@
 /* No comment provided by engineer. */
 "Download %@ %@" = "下载 %1$@ %2$@";
 
+/* SwiftUI pipelineStepToggles entry */
+"Download App" = "下载应用";
+
 /* SwiftUI Text */
 "Download Profile (.mobileprovision)" = "下载描述文件（.mobileprovision）";
 
@@ -1165,6 +1296,9 @@
 
 /* No comment provided by engineer. */
 "duplicate versions" = "重复的版本";
+
+/* SwiftUI sectionHeader */
+"DYNAMIC CRYPTOGRAPHIC TOKENS" = "动态加密令牌";
 
 /* SwiftUI TextField */
 "e.g. CFBundleURLTypes" = "例如 CFBundleURLTypes";
@@ -1202,11 +1336,17 @@
 /* SwiftUI Text */
 "EMPROXY & WIREGUARD" = "EMPROXY 与 WIREGUARD";
 
+/* SwiftUI toggleRow(title) */
+"EMProxy (WireGuard) Server" = "EMProxy (WireGuard) 服务器";
+
 /* SwiftUI Text */
 "Empty Directory" = "空目录";
 
 /* SwiftUI Label */
 "Enable Auto Rotation" = "启用自动轮换";
+
+/* SwiftUI toggleRow(title) */
+"Enable Background Keepalive" = "启用后台保活";
 
 /* No comment provided by engineer. */
 "Enable Background Refresh to automatically refresh apps in the background when connected to Wi-Fi. \n\nEnable Disable Idle Timeout to allow SideStore to keep your device awake during a refresh or install of any apps." = "开启“后台刷新”后，连接 Wi-Fi 时会自动在后台刷新应用。\n\n开启“停用空闲超时”后，SideStore 可在刷新或安装应用期间保持设备不进入休眠。";
@@ -1214,11 +1354,14 @@
 /* SwiftUI Text */
 "Enable iTunes File Sharing" = "启用 iTunes 文件共享";
 
-/* No comment provided by engineer. */
+/* SwiftUI standaloneStepToggles entry */
 "Enable JIT" = "启用 JIT";
 
 /* No comment provided by engineer. */
 "Enable JIT for %@ Failed" = "为 %@ 启用 JIT 失败";
+
+/* SwiftUI toggleRow(title) */
+"Enable Minimuxer Backend Hotswap" = "启用 Minimuxer 后端热切换";
 
 /* SwiftUI Text */
 "Enable SideJITServer" = "启用 SideJITServer";
@@ -1267,6 +1410,9 @@
 
 /* No comment provided by engineer. */
 "Entitlements are additional permissions that grant access to certain system services, including potentially sensitive information." = "权限是可以访问某些系统服务（可能包括敏感信息）的额外授权。";
+
+/* SwiftUI sectionHeader */
+"ENVIRONMENT & LOCALIZATION" = "环境与语言";
 
 /* SwiftUI Text */
 "Error" = "错误";
@@ -1348,6 +1494,12 @@
 
 /* SwiftUI Label */
 "Export Public (.pem)" = "导出公钥（.pem）";
+
+/* SwiftUI pipelineStepToggles entry */
+"Export Resigned IPA" = "导出已重新签名的 IPA";
+
+/* SwiftUI toggleRow(title) */
+"Export Resigned IPAs" = "导出已重新签名的 IPA";
 
 /* SwiftUI Text */
 "Export Sources" = "导出软件源";
@@ -1493,6 +1645,12 @@
 /* SwiftUI Text */
 "Fetch Current Device UDID" = "获取当前设备 UDID";
 
+/* SwiftUI pipelineStepToggles entry */
+"Fetch Provisioning Profiles" = "获取描述文件";
+
+/* SwiftUI standaloneStepToggles entry */
+"Fetch Source" = "获取软件源";
+
 /* SwiftUI Text */
 "Fetching Anisette Servers..." = "正在获取 Anisette 服务器…";
 
@@ -1575,6 +1733,10 @@
 /* DO NOT TRANSLATE */
 "GitHub" = "GitHub";
 
+/* SwiftUI sectionHeader */
+/* DO NOT TRANSLATE */
+"GRANDSLAM AUTH (GSA)" = "GRANDSLAM AUTH (GSA)";
+
 /* SwiftUI Picker */
 "Group By" = "分组方式";
 
@@ -1586,6 +1748,15 @@
 
 /* SwiftUI Text */
 "Group identifier must start with 'group.' prefix (e.g. group.com.example.shared)." = "组标识符必须以“group.”开头（例如 group.com.example.shared）。";
+
+/* SwiftUI infoTokenRow(subtitle) */
+"Hardware identifier computed from adi.pb and device identity" = "根据 adi.pb 和设备身份计算出的硬件标识符";
+
+/* SwiftUI detailRow(title) */
+"Has Private Key" = "包含私钥";
+
+/* SwiftUI headerFieldRow(title) */
+"Header Version" = "Header 版本";
 
 /* SwiftUI navigationTitle */
 "Health Check" = "健康检查";
@@ -1706,7 +1877,7 @@
 /* No comment provided by engineer. */
 "Install and refresh apps using an on-device local loopback VPN tunnel." = "通过设备本地的回环 VPN 隧道来安装和刷新应用。";
 
-/* No comment provided by engineer. */
+/* SwiftUI pipelineStepToggles entry */
 "Install App" = "安装应用";
 
 /* No comment provided by engineer. */
@@ -1748,6 +1919,9 @@
 /* No comment provided by engineer. */
 "iOS %@ or later" = "iOS %@ 或更高版本";
 
+/* SwiftUI toggleRow(title) */
+"iOS Version Check" = "iOS 版本校验";
+
 /* SwiftUI Text */
 /* DO NOT TRANSLATE */
 "iPad" = "iPad";
@@ -1767,6 +1941,12 @@
 
 /* SwiftUI Text */
 "IPv6:" = "IPv6：";
+
+/* SwiftUI infoTokenRow(subtitle) */
+"ISO8601 UTC timestamp locked to OTP generation time" = "与 OTP 生成时间绑定的 ISO8601 UTC 时间戳";
+
+/* SwiftUI detailRow(title) */
+"Issuer" = "颁发者";
 
 /* SwiftUI TextField */
 "Items (comma-separated)" = "项目（以逗号分隔）";
@@ -1876,6 +2056,9 @@
 /* SwiftUI Text */
 "LOCAL NETWORK INTERFACES" = "本地网络接口";
 
+/* SwiftUI headerFieldRow(title) */
+"Local User ID" = "本地用户 ID";
+
 /* No comment provided by engineer. */
 /* DO NOT TRANSLATE */
 "LocalDevVPN" = "LocalDevVPN";
@@ -1886,6 +2069,9 @@
 /* No comment provided by engineer. */
 "LocalDevVPN is not installed on this device." = "本设备尚未安装 LocalDevVPN。";
 
+/* SwiftUI headerFieldRow(title) */
+"Locale" = "语言区域";
+
 /* SwiftUI Text */
 "LOGGING & DIAGNOSTICS" = "日志与诊断";
 
@@ -1895,6 +2081,9 @@
 /* SwiftUI Text */
 /* DO NOT TRANSLATE */
 "Mac" = "Mac";
+
+/* SwiftUI infoTokenRow(title) */
+"Machine ID" = "机器 ID";
 
 /* SwiftUI TextField */
 "Machine Name" = "机器名称";
@@ -1907,6 +2096,9 @@
 
 /* SwiftUI Text */
 "Make sure you're connected to a local network." = "请确保已连接到本地网络。";
+
+/* SwiftUI detailRow(title) */
+"Managed" = "托管";
 
 /* SwiftUI Text */
 "MANAGEMENT" = "管理";
@@ -1923,6 +2115,9 @@
 
 /* SwiftUI Text */
 "MINIMUXER BACKEND" = "MINIMUXER 后端";
+
+/* SwiftUI toggleRow(title) */
+"Minimuxer Verbose Logging" = "Minimuxer 详细日志";
 
 /* SwiftUI Text */
 "Missing" = "缺失";
@@ -1966,6 +2161,9 @@
 
 /* SwiftUI Label */
 "Name (Z to A)" = "名称（Z 至 A）";
+
+/* SwiftUI textFieldRow(subtitle) */
+"Name of the shortcut in Apple Shortcuts app" = "“快捷指令”App 中的快捷指令名称";
 
 /* SwiftUI Text */
 "Name: " = "名称：";
@@ -2129,6 +2327,9 @@
 /* SwiftUI Text */
 "Omit" = "忽略";
 
+/* SwiftUI toggleRow(title) */
+"On-Device Anisette" = "设备端 Anisette";
+
 /* No comment provided by engineer. */
 "On-Device Sideloading" = "设备端侧载";
 
@@ -2143,6 +2344,9 @@
 
 /* No comment provided by engineer. */
 "One or more apps in source “%@” are missing a marketplaceID. This most likely means they are not notarized, which is not supported by this version of SideStore." = "软件源“%@”中有一个或多个应用缺少 marketplaceID。这通常意味着它们未经 Apple 公证，当前版本的 SideStore 不支持此类应用。";
+
+/* SwiftUI infoTokenRow(title) */
+"One-Time Password (OTP)" = "一次性密码（OTP）";
 
 /* No comment provided by engineer. */
 "Open" = "打开";
@@ -2171,6 +2375,9 @@
 /* SwiftUI Text */
 "Operations Logging Control" = "操作日志控制";
 
+/* SwiftUI toggleRow(title) */
+"Operations Verbose Logging" = "操作详细日志";
+
 /* No comment provided by engineer. */
 "Opt in for beta testing to receive regular updates and early previews of upcoming releases.\n\nPlease note that these builds are experimental and may be unstable or break unexpectedly." = "加入测试版体验即可定期收到更新，并提前预览即将发布的版本。\n\n请注意，这些构建版本属于实验性质，可能不稳定或出现意外问题。";
 
@@ -2197,6 +2404,12 @@
 
 /* SwiftUI Text */
 "Overview" = "概览";
+
+/* SwiftUI detailRow(title) */
+"Owner ID" = "所有者 ID";
+
+/* SwiftUI detailRow(title) */
+"Owner Name" = "所有者名称";
 
 /* SwiftUI Button */
 "Pair" = "配对";
@@ -2243,6 +2456,9 @@
 /* No comment provided by engineer. */
 "Permission" = "权限";
 
+/* SwiftUI toggleRow(title) */
+"Permission Checks" = "权限检查";
+
 /* No comment provided by engineer. */
 "Personal Signing" = "个人签名";
 
@@ -2263,6 +2479,12 @@
 
 /* SwiftUI Text */
 "PIPELINE STEPS" = "流水线步骤";
+
+/* SwiftUI detailRow(title) */
+"Platform" = "平台";
+
+/* SwiftUI detailRow(title) */
+"Platform Name" = "平台名称";
 
 /* SwiftUI Text */
 "Please enter a password for the certificate." = "请输入证书的密码。";
@@ -2306,14 +2528,35 @@
 /* SwiftUI Text */
 "PRECISE COLOR METRICS" = "精确色彩指标";
 
+/* SwiftUI toggleRow(subtitle) */
+"Prefer IPA (speed) vs App (storage) efficiency" = "优先 IPA（速度）还是 App（存储）效率";
+
+/* SwiftUI toggleRow(title) */
+"Prefer Resigned IPA" = "优先使用已重新签名的 IPA";
+
+/* SwiftUI toggleRow(title) */
+"Prefer Sheet for Entitlements" = "权限使用 sheet 展示";
+
+/* SwiftUI toggleRow(title) */
+"Prefer Sheet for Info.plist" = "Info.plist 使用 sheet 展示";
+
 /* SwiftUI Text */
 "Preferred" = "首选";
 
 /* SwiftUI Text */
 "Preferred Protocol" = "首选协议";
 
+/* SwiftUI pipelineStepToggles entry */
+"Preflight Checks" = "预检";
+
+/* SwiftUI pipelineStepToggles entry */
+"Prepare App Extension Bundle IDs" = "准备应用扩展 Bundle ID";
+
 /* SwiftUI Text */
 "PRESET THEMES" = "预设主题";
+
+/* SwiftUI sectionHeader */
+"PRIMARY CLIENT HEADERS" = "主要客户端请求头";
 
 /* No comment provided by engineer. */
 "Privacy Permission" = "隐私权限";
@@ -2345,8 +2588,20 @@
 /* SwiftUI navigationTitle */
 "Profiles" = "描述文件";
 
+/* SwiftUI toggleRow(subtitle) */
+"Prompt for confirmation before installing or importing an app" = "安装或导入应用前弹出确认提示";
+
+/* SwiftUI toggleRow(subtitle) */
+"Prompt to choose a custom icon before installing" = "安装前提示选择自定义图标";
+
+/* SwiftUI toggleRow(subtitle) */
+"Prompt to select a provisioning profile before installing" = "安装前提示选择描述文件";
+
 /* No comment provided by engineer. */
 "Protocol Mismatch" = "协议不匹配";
+
+/* SwiftUI headerFieldRow(title) */
+"Protocol Version" = "协议版本";
 
 /* No comment provided by engineer. */
 "Provision Signing Certificate" = "配置签名证书";
@@ -2369,6 +2624,9 @@
 /* SwiftUI Text */
 "public + private" = "公钥 + 私钥";
 
+/* SwiftUI detailRow(title) */
+"Public Key" = "公钥";
+
 /* SwiftUI alert */
 "Purge All Profiles?" = "清除所有描述文件？";
 
@@ -2377,6 +2635,9 @@
 
 /* SwiftUI Text */
 "Quick Actions" = "快捷操作";
+
+/* SwiftUI sectionHeader */
+"RAW CONFIGURATION JSON" = "原始配置 JSON";
 
 /* SwiftUI Text */
 "Raw Dump" = "原始数据";
@@ -2411,6 +2672,9 @@
 /* No comment provided by engineer. */
 "Refresh %@ Failed" = "刷新 %@ 失败";
 
+/* SwiftUI pipelineStepToggles entry */
+"Refresh App" = "刷新应用";
+
 /* SwiftUI Label */
 "Refresh Device Cache (/re/)" = "刷新设备缓存（/re/）";
 
@@ -2441,6 +2705,12 @@
 /* No comment provided by engineer. */
 "Reinstall" = "重新安装";
 
+/* SwiftUI LocalizedStringKey binding */
+"Reload All Widgets" = "重新载入全部 Widget";
+
+/* SwiftUI LocalizedStringKey binding */
+"Reload Top Shelf" = "重新载入 Top Shelf";
+
 /* No comment provided by engineer. */
 "Reloaded All Widgets" = "已重新载入所有小组件";
 
@@ -2449,6 +2719,9 @@
 
 /* SwiftUI Text */
 "Remote Endpoint" = "远程端点";
+
+/* SwiftUI sectionHeader */
+"REMOTE SERVER SYNC" = "远程服务器同步";
 
 /* SwiftUI Label */
 "Remote Server Sync" = "远程服务器同步";
@@ -2462,7 +2735,10 @@
 /* No comment provided by engineer. */
 "Remove %@ Failed" = "移除 %@ 失败";
 
-/* No comment provided by engineer. */
+/* SwiftUI pipelineStepToggles entry */
+"Remove App" = "移除应用";
+
+/* SwiftUI pipelineStepToggles entry */
 "Remove App Extensions" = "移除应用扩展";
 
 /* SwiftUI Text */
@@ -2470,6 +2746,9 @@
 
 /* SwiftUI Label */
 "Remove as Preferred" = "取消设为首选";
+
+/* SwiftUI pipelineStepToggles entry */
+"Remove Backup Data" = "移除备份数据";
 
 /* No comment provided by engineer. */
 "Remove Icon" = "移除图标";
@@ -2488,6 +2767,9 @@
 
 /* SwiftUI Text */
 "Replay Onboarding" = "重播引导流程";
+
+/* SwiftUI detailRow(title) */
+"Requester Email" = "请求者邮箱";
 
 /* SwiftUI Text */
 "Requester: " = "请求者：";
@@ -2509,6 +2791,9 @@
 
 /* SwiftUI Text */
 "Reset adi.pb" = "重置 adi.pb";
+
+/* SwiftUI toggleRow(subtitle) */
+"Reset assigned profiles, custom certificates, and metadata when an app is deleted" = "删除应用时重置已分配的描述文件、自定义证书和元数据";
 
 /* SwiftUI Label */
 "Reset Catalog" = "重置目录";
@@ -2549,6 +2834,9 @@
 /* No comment provided by engineer. */
 "Resign %@ Failed" = "重新签名 %@ 失败";
 
+/* SwiftUI pipelineStepToggles entry */
+"Resign App" = "重新签名应用";
+
 /* No comment provided by engineer. */
 "Resign Later" = "稍后重新签名";
 
@@ -2579,8 +2867,14 @@
 /* SwiftUI alert */
 "Restart Required" = "需要重启";
 
+/* SwiftUI toggleRow(subtitle) */
+"Restart required to apply changes" = "需要重启才能应用更改";
+
 /* No comment provided by engineer. */
 "Restore %@ Failed" = "恢复 %@ 失败";
+
+/* SwiftUI pipelineStepToggles entry */
+"Restore App Data" = "恢复应用数据";
 
 /* Restores the last or current backup of this app */
 "Restore Backup" = "恢复备份";
@@ -2627,6 +2921,21 @@
 /* SwiftUI Text */
 "Revoking a certificate permanently invalidates it on Apple's servers. Any provisioning profiles tied exclusively to this certificate may need to be re-generated." = "吊销证书会在 Apple 服务器上永久使其失效。仅依赖此证书的描述文件可能需要重新生成。";
 
+/* SwiftUI toggleRow(title) */
+"Rotate Logs on Startup" = "启动时轮换日志";
+
+/* SwiftUI LocalizedStringKey binding */
+"Rotate Top Shelf Log" = "轮换 Top Shelf 日志";
+
+/* SwiftUI LocalizedStringKey binding */
+"Rotate Widget Log" = "轮换 Widget 日志";
+
+/* SwiftUI headerFieldRow(title) */
+"Routing Info" = "路由信息";
+
+/* SwiftUI toggleRow(subtitle) */
+"Run ADI emulation directly on device instead of remote servers" = "在设备上直接运行 ADI 模拟，而非使用远程服务器";
+
 /* SwiftUI Button */
 "Save" = "存储";
 
@@ -2644,6 +2953,9 @@
 
 /* SwiftUI Label */
 "Save Raw JSON" = "保存原始 JSON";
+
+/* SwiftUI standaloneStepToggles entry */
+"Schedule Expiration Warning" = "安排到期提醒";
 
 /* SwiftUI Button */
 "Scroll to Bottom" = "滚动到底部";
@@ -2711,11 +3023,23 @@
 /* SwiftUI Text */
 "Select which certificates are permitted to sign applications with this profile." = "选择允许使用此描述文件为应用签名的证书。";
 
+/* SwiftUI pipelineStepToggles entry */
+"Send App" = "发送应用";
+
 /* UIAlertAction title */
 "Send Email" = "发送邮件";
 
 /* UIAlertController title */
 "Send Feedback" = "发送反馈";
+
+/* SwiftUI headerFieldRow(title) */
+"Serial Number" = "序列号";
+
+/* SwiftUI detailRow(title) */
+"Serial Number (dec)" = "序列号（十进制）";
+
+/* SwiftUI detailRow(title) */
+"Serial Number (hex)" = "序列号（十六进制）";
 
 /* SwiftUI Text */
 "Serial: " = "序列号：";
@@ -2729,8 +3053,14 @@
 /* SwiftUI Text */
 "Server List URL" = "服务器列表网址";
 
+/* SwiftUI headerFieldRow(title) */
+"Service" = "服务";
+
 /* SwiftUI navigationTitle */
 "Service Details" = "服务详情";
+
+/* SwiftUI headerFieldRow(title) */
+"Services Version" = "服务版本";
 
 /* No comment provided by engineer. */
 "Set & Resign" = "设置并重新签名";
@@ -2777,6 +3107,9 @@
 /* SwiftUI Button */
 "Show Failed" = "显示失败项";
 
+/* SwiftUI toggleRow(title) */
+"Show WireGuard Settings" = "显示 WireGuard 设置";
+
 /* SwiftUI navigationTitle */
 /* DO NOT TRANSLATE */
 "SideJITServer" = "SideJITServer";
@@ -2802,6 +3135,9 @@
 
 /* SwiftUI navigationTitle */
 "SideSign Config" = "SideSign 配置";
+
+/* SwiftUI toggleRow(title) */
+"SideSign Verbose Logging" = "SideSign 详细日志";
 
 /* SwiftUI Text */
 /* DO NOT TRANSLATE */
@@ -2834,6 +3170,9 @@
 /* No comment provided by engineer. */
 "SideStore uses a pairing file (.mobiledevicepairing or .plist) generated by your computer to talk to %@ device services." = "SideStore 使用由你的电脑生成的配对文件（.mobiledevicepairing 或 .plist）来与 %@ 的设备服务通信。";
 
+/* SwiftUI toggleRow(title) */
+"SideStore Verbose Logging" = "SideStore 详细日志";
+
 /* No comment provided by engineer. */
 "SideStore was installed by a different signing tool (like Xcode or AltStore)." = "SideStore 是由其他签名工具（如 Xcode 或 AltStore）安装的。";
 
@@ -2858,6 +3197,12 @@
 /* SwiftUI Text */
 "Signature & Public Key Details" = "签名与公钥详情";
 
+/* SwiftUI detailRow(title) */
+"Signature Algorithm" = "签名算法";
+
+/* SwiftUI infoTokenRow(subtitle) */
+"Signed HMAC token dynamically calculated by ADI engine per request" = "由 ADI 引擎按请求动态计算的 HMAC 签名令牌";
+
 /* No comment provided by engineer. */
 "Signed in" = "已登录";
 
@@ -2878,6 +3223,9 @@
 
 /* No comment provided by engineer. */
 "Skip & Continue" = "跳过并继续";
+
+/* SwiftUI toggleRow(title) */
+"Skip Uncopyable Backup Files" = "跳过无法拷贝的备份文件";
 
 /* SwiftUI Text */
 "SN: " = "序列号：";
@@ -2909,6 +3257,12 @@
 /* No comment provided by engineer. */
 "Sources determine what apps are available in SideStore. The more sources you add, the better your SideStore experience will be.\n\nDon’t know where to start? Try adding one of our Recommended Sources!" = "软件源决定了 SideStore 中有哪些应用可用。添加的软件源越多，你的 SideStore 体验就越好。\n\n不知从何开始？试试添加我们的推荐软件源吧！";
 
+/* SwiftUI pipelineStepToggles entry */
+"Stage App" = "暂存应用";
+
+/* SwiftUI pipelineStepToggles entry */
+"Stage Backup App" = "暂存备份应用";
+
 /* SwiftUI Text */
 "STANDALONE FEATURES" = "独立功能";
 
@@ -2936,7 +3290,7 @@
 /* No comment provided by engineer. */
 "Starting…" = "正在启动…";
 
-/* SwiftUI Text */
+/* SwiftUI detailRow(title) */
 "Status" = "状态";
 
 /* SwiftUI Text */
@@ -2963,6 +3317,9 @@
 /* SwiftUI Text */
 "Storage Explorer Error" = "存储浏览器错误";
 
+/* SwiftUI detailRow(title) */
+"Subject" = "主题";
+
 /* SwiftUI alert */
 "Success" = "成功";
 
@@ -2986,6 +3343,9 @@
 
 /* SwiftUI Text */
 "Switching to Resigned IPA prioritizes install speed (~40% faster) by packaging an uncompressed IPA for fast transfer, but temporarily uses additional disk space during packaging." = "切换到“Resigned IPA”以提高安装速度（约快 40%）：打包未压缩的 IPA 以加快传输，但打包期间会临时占用额外磁盘空间。";
+
+/* SwiftUI standaloneStepToggles entry */
+"Sync App IDs" = "同步 App ID";
 
 /* SwiftUI Text */
 "Tap a permission to learn more." = "轻点某项权限以了解更多。";
@@ -3173,6 +3533,9 @@
 /* No comment provided by engineer. */
 "This will sign you out of Apple ID in SideStore and clear the provisioned adi.pb data from your Keychain. Your active signing certificate will be preserved." = "这将使你在 SideStore 中退出 Apple ID，并清除钥匙串中已配置的 adi.pb 数据。当前生效的签名证书会予以保留。";
 
+/* SwiftUI headerFieldRow(title) */
+"Time Zone" = "时区";
+
 /* SwiftUI Text */
 "Timeout (ms)" = "超时（毫秒）";
 
@@ -3188,6 +3551,12 @@
 /* No comment provided by engineer. */
 "Today" = "今天";
 
+/* SwiftUI LocalizedStringKey binding */
+"TOP SHELF OPTIONS" = "Top Shelf 选项";
+
+/* SwiftUI LocalizedStringKey binding */
+"Top Shelf Verbose Logging" = "Top Shelf 详细日志";
+
 /* SwiftUI Text */
 "Total" = "总计";
 
@@ -3197,8 +3566,23 @@
 /* No comment provided by engineer. */
 "Try Again" = "重试";
 
+/* SwiftUI textFieldRow(title) */
+"Turn Off Base Delay" = "关闭数据后的基础延迟";
+
+/* SwiftUI textFieldRow(title) */
+"Turn Off Cellular Shortcut" = "关闭蜂窝数据的快捷指令";
+
+/* SwiftUI textFieldRow(title) */
+"Turn On Base Delay" = "打开数据后的基础延迟";
+
+/* SwiftUI textFieldRow(title) */
+"Turn On Cellular Shortcut" = "打开蜂窝数据的快捷指令";
+
 /* SwiftUI Text */
 "Type" = "类型";
+
+/* SwiftUI detailRow(title) */
+"Type Name" = "类型名称";
 
 /* SwiftUI Text */
 "Type Name: " = "类型名称：";
@@ -3287,6 +3671,9 @@
 /* No comment provided by engineer. */
 "Update %@ Failed" = "更新 %@ 失败";
 
+/* SwiftUI pipelineStepToggles entry */
+"Update App Certificate" = "更新应用证书";
+
 /* No comment provided by engineer. */
 "Updating sources…" = "正在更新软件源…";
 
@@ -3299,11 +3686,20 @@
 /* SwiftUI Toggle */
 "Use Local VPN" = "使用本地 VPN";
 
+/* SwiftUI toggleRow(subtitle) */
+"Use sheet instead of dialog" = "使用 sheet 而非对话框";
+
 /* No comment provided by engineer. */
 "Use your own Apple ID to sign apps with standard development certificates." = "使用你自己的 Apple ID，通过标准开发证书为应用签名。";
 
+/* SwiftUI headerFieldRow(title) */
+"User Agent" = "用户代理";
+
 /* SwiftUI Text */
 "User Configuration" = "用户配置";
+
+/* SwiftUI pipelineStepToggles entry */
+"User Customization" = "用户自定义";
 
 /* SwiftUI navigationTitle */
 "User Customizations" = "用户自定义";
@@ -3313,6 +3709,15 @@
 
 /* SwiftUI Text */
 "v0.6.0 • Installed" = "v0.6.0 • 已安装";
+
+/* SwiftUI detailRow(title) */
+"Valid From" = "生效日期";
+
+/* SwiftUI detailRow(title) */
+"Valid Until" = "失效日期";
+
+/* SwiftUI detailRow(title) */
+"Validity Days" = "有效天数";
 
 /* SwiftUI Text */
 "Validity Period" = "有效期";
@@ -3335,6 +3740,12 @@
 /* No comment provided by engineer. */
 "Verification Method" = "验证方式";
 
+/* SwiftUI pipelineStepToggles entry */
+"Verify App" = "校验应用";
+
+/* SwiftUI pipelineStepToggles entry */
+"Verify Certificate" = "校验证书";
+
 /* No comment provided by engineer. */
 "Verify VPN" = "验证 VPN";
 
@@ -3349,6 +3760,9 @@
 
 /* No comment provided by engineer. */
 "Version %@" = "版本 %@";
+
+/* SwiftUI sectionHeader(title) */
+"VERSIONING" = "版本";
 
 /* No comment provided by engineer. */
 "View All" = "查看全部";
@@ -3405,6 +3819,15 @@
 /* SwiftUI Text */
 "Widget Log" = "小组件日志";
 
+/* SwiftUI LocalizedStringKey binding */
+"WIDGET OPTIONS" = "Widget 选项";
+
+/* SwiftUI LocalizedStringKey binding */
+"Widget Verbose Logging" = "Widget 详细日志";
+
+/* SwiftUI toggleRow(title) */
+"Wipe Database on Next Start" = "下次启动时清空数据库";
+
 /* SwiftUI Text */
 "WIREGUARD CONFIGURATION" = "WIREGUARD 配置";
 
@@ -3434,6 +3857,9 @@
 
 /* SwiftUI Text */
 "X.509 Fields" = "X.509 字段";
+
+/* SwiftUI headerFieldRow(title) */
+"Xcode Version" = "Xcode 版本";
 
 /* SwiftUI Text */
 /* DO NOT TRANSLATE */

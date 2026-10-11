@@ -101,6 +101,37 @@ LABELLED_ARG_CALLS: dict[str, frozenset[str]] = {
 #: `navigationTitle` takes the title as its first positional argument.
 FUNCTIONAL_MODIFIERS: frozenset[str] = frozenset({"navigationTitle", "navigationBarTitle"})
 
+#: Project-private SwiftUI helpers whose title-ish parameters are declared as
+#: ``LocalizedStringKey`` in the source. ``Text(title)`` inside such a helper
+#: resolves the key against ``Localizable.strings``, so a string literal passed
+#: to one of these labels (or as the sole positional argument, written as
+#: ``None``) is a localizable key even though the callee is not a SwiftUI view.
+#:
+#: Parameters that receive *runtime* values (``value:``, ``headerKey:``,
+#: ``icon:``, ``placeholder:``, ``isOn:`` ...) are deliberately absent: those
+#: parameters keep the plain ``String`` type and must never be extracted.
+LOCALIZABLE_FUNC_PARAMS: dict[str, frozenset[str | None]] = {
+    "toggleRow": frozenset({"title", "subtitle"}),
+    "textFieldRow": frozenset({"title", "subtitle"}),
+    "stepToggle": frozenset({None}),  # sole positional argument
+    "sectionHeader": frozenset({"title", None}),  # labelled and positional forms
+    "detailRow": frozenset({"title"}),
+    "detailRowWithCopy": frozenset({"title"}),
+    "infoTokenRow": frozenset({"title", "subtitle"}),
+    "headerFieldRow": frozenset({"title"}),
+}
+
+#: File-scope lookup tables whose elements are ``(name: LocalizedStringKey,
+#: step: ...)`` tuples. The step names are user facing copy that lives in a
+#: data table instead of in a view call, so they need their own rule: every
+#: first element of a tuple inside the initializer is a localizable key.
+#: Maps the table's variable name to the tuple field that carries the key.
+LOCALIZABLE_TUPLE_ARRAYS: dict[str, str] = {
+    "pipelineStepToggles": "name",
+    "standaloneStepToggles": "name",
+}
+
+
 #: A format placeholder such as %@, %1$@, %.2f, %lld ...
 PLACEHOLDER_RE: re.Pattern[str] = re.compile(
     r"%"
@@ -492,8 +523,29 @@ def matching_paren(tokens: list[Token], open_index: int) -> int:
     return len(tokens) - 1
 
 
-def labelled_string_argument(tokens: list[Token], start: int, end: int, label: str) -> str | None:
-    """Find ``label: "literal"`` inside ``tokens[start:end]``. Returns the value."""
+def matching_bracket(tokens: list[Token], open_index: int) -> int:
+    """Index of the ``]`` matching the ``[`` at ``open_index`` (or last index)."""
+    depth: int = 0
+    for index in range(open_index, len(tokens)):
+        token: Token = tokens[index]
+        if token.kind == "op" and token.value == "[":
+            depth += 1
+        elif token.kind == "op" and token.value == "]":
+            depth -= 1
+            if depth == 0:
+                return index
+    return len(tokens) - 1
+
+
+def find_labelled_literal(
+    tokens: list[Token], start: int, end: int, label: str
+) -> tuple[str, int] | None:
+    """Find ``label: "literal"`` inside ``tokens[start:end]``.
+
+    Returns ``(value, index_of_the_literal)`` or ``None``. The value is
+    :data:`INTERPOLATION_MARKER` when the literal contains interpolation, which
+    lets callers report it instead of treating it as a constant key.
+    """
     for index in range(start, end):
         token: Token = tokens[index]
         if token.kind != "ident" or token.value != label:
@@ -508,9 +560,15 @@ def labelled_string_argument(tokens: list[Token], start: int, end: int, label: s
         if index + 3 < len(tokens) and tokens[index + 3].kind == "op" and tokens[index + 3].value == "(":
             continue  # e.g. `comment: NSLocalizedString(` - not a plain literal
         if has_interpolation(candidate.value):
-            return INTERPOLATION_MARKER
-        return candidate.value
+            return INTERPOLATION_MARKER, index + 2
+        return candidate.value, index + 2
     return None
+
+
+def labelled_string_argument(tokens: list[Token], start: int, end: int, label: str) -> str | None:
+    """Find ``label: "literal"`` inside ``tokens[start:end]``. Returns the value."""
+    found: tuple[str, int] | None = find_labelled_literal(tokens, start, end, label)
+    return None if found is None else found[0]
 
 
 def has_label(tokens: list[Token], start: int, end: int, label: str) -> bool:
@@ -538,6 +596,23 @@ def extract_from_swift(path: Path, relative: str, report: ScanReport) -> list[En
             continue
 
         name: str = token.value
+
+        if name == "LocalizedStringKey":
+            entry = _handle_typed_binding(tokens, index, relative, report)
+            if entry is not None:
+                entries.append(entry)
+
+        if name in LOCALIZABLE_TUPLE_ARRAYS:
+            # A lookup table is a declaration (`let name: [...] = [...]`), not a
+            # call, so it has to be matched before the `name(` filter below.
+            # Usage sites are followed by `.` or `)`, never by `:`.
+            following: Token | None = tokens[index + 1] if index + 1 < len(tokens) else None
+            if following is not None and following.kind == "op" and following.value == ":":
+                entries.extend(
+                    _handle_localizable_tuple_array(tokens, index, name, relative, report)
+                )
+            continue
+
         next_token: Token | None = tokens[index + 1] if index + 1 < len(tokens) else None
         if next_token is None or next_token.kind != "op" or next_token.value != "(":
             continue
@@ -556,6 +631,26 @@ def extract_from_swift(path: Path, relative: str, report: ScanReport) -> list[En
                                               kind="string_formatted")
             if entry is not None:
                 entries.append(entry)
+            continue
+
+        if name in LOCALIZABLE_TUPLE_ARRAYS:
+            # A lookup table is a declaration (`let name: [...] = [...]`), not a
+            # call, so it has to be matched before the `name(` filter below.
+            # Usage sites are followed by `.` or `)`, never by `:`.
+            following: Token | None = tokens[index + 1] if index + 1 < len(tokens) else None
+            if following is not None and following.kind == "op" and following.value == ":":
+                entries.extend(
+                    _handle_localizable_tuple_array(tokens, index, name, relative, report)
+                )
+            continue
+
+        if name in LOCALIZABLE_FUNC_PARAMS:
+            entries.extend(
+                _handle_localizable_func(
+                    tokens, open_index, close_index, name,
+                    LOCALIZABLE_FUNC_PARAMS[name], relative, report,
+                )
+            )
             continue
 
         if name in SWIFTUI_FIRST_ARG_VIEWS or name in FUNCTIONAL_MODIFIERS:
@@ -689,6 +784,196 @@ def _handle_positional(
 
     return Entry(key=first.value, comment=f"SwiftUI {name}", kind="swiftui",
                  origin=relative, line=first.line)
+
+
+def _handle_typed_binding(
+    tokens: list[Token],
+    index: int,
+    relative: str,
+    report: ScanReport,
+) -> Entry | None:
+    """Handle ``let name: LocalizedStringKey = "literal"`` declarations.
+
+    A binding whose type is explicitly ``LocalizedStringKey`` resolves its
+    initializer against ``Localizable.strings``, so a literal assigned to it is
+    a translation key even though it never appears inside a view call.
+    Function parameters, tuple fields and struct properties are ignored: none
+    of them is followed by ``= <string literal>``.
+    """
+    # Backwards: `<ident> :` - the annotated binding name.
+    if index < 2:
+        return None
+    if tokens[index - 1].kind != "op" or tokens[index - 1].value != ":":
+        return None
+    if tokens[index - 2].kind != "ident":
+        return None
+
+    # Forwards: `=` (or `? =` for an optional binding), then a string literal.
+    cursor: int = index + 1
+    if cursor < len(tokens) and tokens[cursor].kind == "op" and tokens[cursor].value == "?":
+        cursor += 1
+    if cursor >= len(tokens) or tokens[cursor].kind != "op" or tokens[cursor].value != "=":
+        return None
+    cursor += 1
+    if cursor >= len(tokens):
+        return None
+
+    literal: Token = tokens[cursor]
+    if literal.kind != "string" or not literal.value:
+        return None
+    if has_interpolation(literal.value):
+        report.skipped_interpolated.append(
+            {
+                "origin": relative,
+                "line": literal.line,
+                "preview": literal.value[:80],
+                "reason": "LocalizedStringKey binding contains interpolation",
+            }
+        )
+        return None
+
+    return Entry(
+        key=literal.value,
+        comment="SwiftUI LocalizedStringKey binding",
+        kind="swiftui",
+        origin=relative,
+        line=literal.line,
+    )
+
+
+def _handle_localizable_func(
+    tokens: list[Token],
+    open_index: int,
+    close_index: int,
+    name: str,
+    params: frozenset[str | None],
+    relative: str,
+    report: ScanReport,
+) -> list[Entry]:
+    """Collect the literal keys passed to a project-private localizable helper.
+
+    Only plain string literals are accepted. A variable, a ternary, an
+    interpolated literal or a ``String(format:)`` result is left alone, so
+    runtime values can never be mistaken for translation keys.
+    """
+    entries: list[Entry] = []
+
+    for label in sorted(param for param in params if param is not None):
+        found: tuple[str, int] | None = find_labelled_literal(
+            tokens, open_index, close_index, label
+        )
+        if found is None or found[0] == "":
+            continue
+        value: str
+        literal_index: int
+        value, literal_index = found
+        if value == INTERPOLATION_MARKER:
+            report.skipped_interpolated.append(
+                {
+                    "origin": relative,
+                    "line": tokens[literal_index].line,
+                    "preview": f"{name}({label}:)",
+                    "reason": "argument contains string interpolation",
+                }
+            )
+            continue
+        entries.append(
+            Entry(
+                key=value,
+                comment=f"SwiftUI {name}({label})",
+                kind="swiftui",
+                origin=relative,
+                line=tokens[literal_index].line,
+            )
+        )
+
+    if None in params:
+        # Sole positional argument, e.g. `sectionHeader("TITLE")`.
+        first: Token | None = tokens[open_index + 1] if open_index + 1 < len(tokens) else None
+        if first is not None and first.kind == "string" and first.value:
+            if has_interpolation(first.value):
+                report.skipped_interpolated.append(
+                    {
+                        "origin": relative,
+                        "line": first.line,
+                        "preview": first.value[:80],
+                        "reason": f"{name} literal contains interpolation",
+                    }
+                )
+            else:
+                entries.append(
+                    Entry(
+                        key=first.value,
+                        comment=f"SwiftUI {name}",
+                        kind="swiftui",
+                        origin=relative,
+                        line=first.line,
+                    )
+                )
+
+    return entries
+
+
+def _handle_localizable_tuple_array(
+    tokens: list[Token],
+    decl_index: int,
+    name: str,
+    relative: str,
+    report: ScanReport,
+) -> list[Entry]:
+    """Extract the keys of a ``[(name: LocalizedStringKey, step: ...)]`` table.
+
+    ``decl_index`` points at the variable name; the initializer is located by
+    scanning forward for the ``=`` that follows the type annotation. Every
+    first element of a tuple inside the array literal is a localizable key.
+    """
+    entries: list[Entry] = []
+
+    cursor: int = decl_index + 1
+    while cursor < len(tokens):
+        token: Token = tokens[cursor]
+        if token.kind == "op" and token.value == "=":
+            break
+        cursor += 1
+    if cursor >= len(tokens):
+        return entries
+
+    cursor += 1
+    if cursor >= len(tokens) or tokens[cursor].kind != "op" or tokens[cursor].value != "[":
+        return entries
+
+    close_index: int = matching_bracket(tokens, cursor)
+    position: int = cursor + 1
+    while position < close_index:
+        token = tokens[position]
+        if token.kind == "op" and token.value == "(":
+            element_close: int = matching_paren(tokens, position)
+            first: Token | None = tokens[position + 1] if position + 1 < len(tokens) else None
+            if first is not None and first.kind == "string" and first.value:
+                if has_interpolation(first.value):
+                    report.skipped_interpolated.append(
+                        {
+                            "origin": relative,
+                            "line": first.line,
+                            "preview": first.value[:80],
+                            "reason": f"{name} entry contains string interpolation",
+                        }
+                    )
+                else:
+                    entries.append(
+                        Entry(
+                            key=first.value,
+                            comment=f"SwiftUI {name} entry",
+                            kind="swiftui",
+                            origin=relative,
+                            line=first.line,
+                        )
+                    )
+            position = element_close + 1
+            continue
+        position += 1
+
+    return entries
 
 
 # --------------------------------------------------------------------------------------

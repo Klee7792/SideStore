@@ -1,0 +1,192 @@
+
+/* Class = "UILabel"; text = "sideteam@sidestore.io"; ObjectID = "0uP-Cd-tNX"; */
+"0uP-Cd-tNX.text" = "sideteam@sidestore.io";
+
+/* Class = "UILabel"; text = "Enable Beta Updates"; ObjectID = "1B5-BJ-Rkb"; */
+"1B5-BJ-Rkb.text" = "启用测试版更新";
+
+/* Class = "UIBarButtonItem"; title = "console"; ObjectID = "1cD-4y-vTJ"; */
+"1cD-4y-vTJ.title" = "控制台";
+
+/* Class = "UITextView"; text = "Error Description"; ObjectID = "1df-ri-hKN"; */
+"1df-ri-hKN.text" = "错误描述";
+
+/* Class = "UILabel"; text = "How it works"; ObjectID = "2CC-iw-3bd"; */
+"2CC-iw-3bd.text" = "工作原理";
+
+/* Class = "UILabel"; text = "Support the team"; ObjectID = "3Il-5a-5Zp"; */
+"3Il-5a-5Zp.text" = "支持团队";
+
+/* Class = "UILabel"; text = "Developers"; ObjectID = "434-MW-Den"; */
+"434-MW-Den.text" = "开发者";
+
+/* Class = "UILabel"; text = "SideJITServer"; ObjectID = "46q-DB-5nc"; */
+"46q-DB-5nc.text" = "SideJITServer";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "4MX-Qv-H8V"; */
+"4MX-Qv-H8V.text" = "日期";
+
+/* Class = "UILabel"; text = "Version 0.6.0"; ObjectID = "5u7-mb-jJj"; */
+"5u7-mb-jJj.text" = "Version 0.6.0";
+
+/* Class = "UILabel"; text = "Could not connect to SideStore."; ObjectID = "7L1-AA-2yo"; */
+"7L1-AA-2yo.text" = "无法连接到 SideStore。";
+
+/* Class = "UILabel"; text = "Sign in with Apple ID"; ObjectID = "7lu-Yk-87t"; */
+"7lu-Yk-87t.text" = "使用 Apple ID 登录";
+
+/* Class = "UIButton"; configuration.title = "  "; ObjectID = "B8Q-e7-beR"; */
+"B8Q-e7-beR.configuration.title" = "  ";
+
+/* Class = "UIBarButtonItem"; title = "trash"; ObjectID = "BnQ-Eh-1gC"; */
+"BnQ-Eh-1gC.title" = "删除";
+
+/* Class = "UILabel"; text = "Side Team"; ObjectID = "CnN-M1-AYK"; */
+"CnN-M1-AYK.text" = "Side Team";
+
+/* Class = "UILabel"; text = "Licenses"; ObjectID = "D6b-cd-pVK"; */
+"D6b-cd-pVK.text" = "许可证";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "Ddg-UQ-KJ8"; */
+"Ddg-UQ-KJ8.title" = "设置";
+
+/* Class = "UILabel"; text = "Background Refresh"; ObjectID = "EbG-HB-IOn"; */
+"EbG-HB-IOn.text" = "后台刷新";
+
+/* Class = "UILabel"; text = "Prompt AppExtns Customization"; ObjectID = "Fq5-2u-Lge"; */
+"Fq5-2u-Lge.text" = "提示自定义应用扩展";
+
+/* Class = "UILabel"; text = "SideStore Team"; ObjectID = "JAA-iZ-VGb"; */
+"JAA-iZ-VGb.text" = "SideStore Team";
+
+/* Class = "UINavigationItem"; title = "Software Licenses"; ObjectID = "JcT-wX-zay"; */
+"JcT-wX-zay.title" = "软件许可证";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "LP8-gK-WC2"; */
+"LP8-gK-WC2.title" = "设置";
+
+/* Class = "UILabel"; text = "Success"; ObjectID = "Na7-uj-XYZ"; */
+"Na7-uj-XYZ.text" = "成功";
+
+/* Class = "UILabel"; text = "Disable Idle Timeout"; ObjectID = "PCh-Up-aJJ"; */
+"PCh-Up-aJJ.text" = "禁用空闲超时";
+
+/* Class = "UILabel"; text = "Error Code"; ObjectID = "R5a-wv-xHd"; */
+"R5a-wv-xHd.text" = "错误代码";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "SGf-pP-RL0"; */
+"SGf-pP-RL0.text" = "日期";
+
+/* Class = "UILabel"; text = "Success"; ObjectID = "SWb-Of-t97"; */
+"SWb-Of-t97.text" = "成功";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "Sge-cM-Fw9"; */
+"Sge-cM-Fw9.text" = "类型";
+
+/* Class = "UINavigationItem"; title = "Refresh Attempts"; ObjectID = "V4e-K5-U8O"; */
+"V4e-K5-U8O.title" = "刷新记录";
+
+/* Class = "UILabel"; text = "Disable App Limit"; ObjectID = "W95-fD-NAd"; */
+"W95-fD-NAd.text" = "解除应用数量限制";
+
+/* Class = "UILabel"; text = "Follow SideStore for updates"; ObjectID = "XFa-MY-7cV"; */
+"XFa-MY-7cV.text" = "关注 SideStore 获取更新";
+
+/* Class = "UILabel"; text = "Change App Icon"; ObjectID = "Y4l-PD-ev9"; */
+"Y4l-PD-ev9.text" = "更改 App 图标";
+
+/* Class = "UINavigationItem"; title = "Error Log"; ObjectID = "a1p-3W-bSi"; */
+"a1p-3W-bSi.title" = "错误日志";
+
+/* Class = "UIButton"; configuration.title = " "; ObjectID = "ba2-EY-tf5"; */
+"ba2-EY-tf5.configuration.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ba2-EY-tf5"; */
+"ba2-EY-tf5.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Backup & Restore"; ObjectID = "bkp-Rst-lbl"; */
+"bkp-Rst-lbl.text" = "备份与恢复";
+
+/* Class = "UILabel"; text = "Allow Siri To Refresh Apps…"; ObjectID = "c6K-fI-CVr"; */
+"c6K-fI-CVr.text" = "允许 Siri 刷新应用…";
+
+/* Class = "UILabel"; text = "Certificate Management"; ObjectID = "crt-Mg-lbl"; */
+"crt-Mg-lbl.text" = "证书管理";
+
+/* Class = "UILabel"; text = "Developer Portal Services"; ObjectID = "dev-Svc-lbl"; */
+"dev-Svc-lbl.text" = "开发者网站服务";
+
+/* Class = "UILabel"; text = "Anisette Servers"; ObjectID = "eds-Dj-36y"; */
+"eds-Dj-36y.text" = "Anisette 服务器";
+
+/* Class = "UILabel"; text = "Experimental Features"; ObjectID = "exp-feat-label"; */
+"exp-feat-label.text" = "实验性功能";
+
+/* Class = "UILabel"; text = "Asset Designer"; ObjectID = "fGU-Fp-XgM"; */
+"fGU-Fp-XgM.text" = "素材设计";
+
+/* Class = "UILabel"; text = "Chris (LitRitt)"; ObjectID = "hId-3P-41T"; */
+"hId-3P-41T.text" = "Chris (LitRitt)";
+
+/* Class = "UILabel"; text = "Developers"; ObjectID = "hRA-OK-Vjw"; */
+"hRA-OK-Vjw.text" = "开发者";
+
+/* Class = "UILabel"; text = "Health Check"; ObjectID = "hlt-Ch-lbl"; */
+"hlt-Ch-lbl.text" = "健康检查";
+
+/* Class = "UILabel"; text = "Connection Config"; ObjectID = "iie-Nj-lki"; */
+"iie-Nj-lki.text" = "连接配置";
+
+/* Class = "UILabel"; text = "Clear Data Cache…"; ObjectID = "j4e-Mz-DlL"; */
+"j4e-Mz-DlL.text" = "清除数据缓存…";
+
+/* Class = "UILabel"; text = "Developer Options"; ObjectID = "jFh-36-AP2"; */
+"jFh-36-AP2.text" = "开发者选项";
+
+/* Class = "UIButton"; configuration.title = "stable"; ObjectID = "kYQ-zz-vjQ"; */
+"kYQ-zz-vjQ.configuration.title" = "stable";
+
+/* Class = "UILabel"; text = "Beta Updates Track"; ObjectID = "nSh-L8-ca0"; */
+"nSh-L8-ca0.text" = "测试版更新通道";
+
+/* Class = "UILabel"; text = "Network Discovery (mDNS)"; ObjectID = "ntw-Dsc-lbl"; */
+"ntw-Dsc-lbl.text" = "网络发现（mDNS）";
+
+/* Class = "UITextView"; text = "Jay Freeman (ldid) \nCopyright (C) 2007-2012 Jay Freeman (saurik)\n\nlibimobiledevice\n© 2007-2015 by the contributors of libimobiledevice - All rights reserved.\n\nGilles Vollant (minizip)\nCopyright (C) 1998-2005 Gilles Vollant\n\nKishikawa Katsumi (KeychainAccess)\nCopyright (c) 2014 kishikawa katsumi\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nAlexander Grebenyuk (Nuke)\nCopyright (c) 2015-2019 Alexander Grebenyuk\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nCraig Hockenberry (MarkdownAttributedString)\nCopyright (c) 2020 The Iconfactory, Inc. https://iconfactory.com\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nThe OpenSSL Project (OpenSSL)\nCopyright (c) 1998-2019 The OpenSSL Project.  All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n3. All advertising materials mentioning features or use of this software must display the following acknowledgment: \"This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/)\"\n4. The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to endorse or promote products derived from this software without prior written permission. For written permission, please contact openssl-core@openssl.org.\n5. Products derived from this software may not be called \"OpenSSL\" nor may \"OpenSSL\" appear in their names without prior written permission of the OpenSSL Project.\n6. Redistributions of any form whatsoever must retain the following acknowledgment:\n\"This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/)\"\nTHIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\nThis product includes cryptographic software written by Eric Young (eay@cryptsoft.com). This product includes software written by Tim Hudson (tjh@cryptsoft.com).\n\nEric Young (SSLeay)\n/* Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)\nAll rights reserved.\nThis package is an SSL implementation written by Eric Young (eay@cryptsoft.com).\nThe implementation was written so as to conform with Netscapes SSL. This library is free for commercial and non-commercial use as long as the following conditions are aheared to.  The following conditions apply to all code found in this distribution, be it the RC4, RSA, lhash, DES, etc., code; not just the SSL code.  The SSL documentation included with this distribution is covered by the same copyright terms except that the holder is Tim Hudson (tjh@cryptsoft.com).\nCopyright remains Eric Young's, and as such any Copyright notices in the code are not to be removed. If this package is used in a product, Eric Young should be given attribution as the author of the parts of the library used. This can be in the form of a textual message at program startup or in documentation (online or textual) provided with the package.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n1. Redistributions of source code must retain the copyright notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the\ndocumentation and/or other materials provided with the distribution.\n3. All advertising materials mentioning features or use of this software must display the following acknowledgement:\n\"This product includes cryptographic software written by Eric Young (eay@cryptsoft.com)\"\nThe word 'cryptographic' can be left out if the rouines from the library being used are not cryptographic related :-).\n4. If you include any Windows specific code (or a derivative thereof) from the apps directory (application code) you must include an acknowledgement:\n\"This product includes software written by Tim Hudson (tjh@cryptsoft.com)\" THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\nThe licence and distribution terms for any publically available version or derivative of this code cannot be changed.  i.e. this code cannot simply be copied and put under another distribution licence [including the GNU Public Licence.]\n\nToni Ronkko (dirent)\nCopyright (c) 1998-2019 Toni Ronkko\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nMicrosoft Corporation (C++ REST SDK)\nCopyright (c) Microsoft Corporation\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nKutuzov Viktor (mman-win32)\nCopyright (c) Kutuzov Viktor\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nICONS\n\nSettings by i cons from the Noun Project"; ObjectID = "oQQ-pR-oKc"; */
+"oQQ-pR-oKc.text" = "Jay Freeman (ldid) \nCopyright (C) 2007-2012 Jay Freeman (saurik)\n\nlibimobiledevice\n© 2007-2015 by the contributors of libimobiledevice - All rights reserved.\n\nGilles Vollant (minizip)\nCopyright (C) 1998-2005 Gilles Vollant\n\nKishikawa Katsumi (KeychainAccess)\nCopyright (c) 2014 kishikawa katsumi\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nAlexander Grebenyuk (Nuke)\nCopyright (c) 2015-2019 Alexander Grebenyuk\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nCraig Hockenberry (MarkdownAttributedString)\nCopyright (c) 2020 The Iconfactory, Inc. https://iconfactory.com\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nThe OpenSSL Project (OpenSSL)\nCopyright (c) 1998-2019 The OpenSSL Project.  All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n3. All advertising materials mentioning features or use of this software must display the following acknowledgment: \"This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/)\"\n4. The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to endorse or promote products derived from this software without prior written permission. For written permission, please contact openssl-core@openssl.org.\n5. Products derived from this software may not be called \"OpenSSL\" nor may \"OpenSSL\" appear in their names without prior written permission of the OpenSSL Project.\n6. Redistributions of any form whatsoever must retain the following acknowledgment:\n\"This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/)\"\nTHIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\nThis product includes cryptographic software written by Eric Young (eay@cryptsoft.com). This product includes software written by Tim Hudson (tjh@cryptsoft.com).\n\nEric Young (SSLeay)\n/* Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)\nAll rights reserved.\nThis package is an SSL implementation written by Eric Young (eay@cryptsoft.com).\nThe implementation was written so as to conform with Netscapes SSL. This library is free for commercial and non-commercial use as long as the following conditions are aheared to.  The following conditions apply to all code found in this distribution, be it the RC4, RSA, lhash, DES, etc., code; not just the SSL code.  The SSL documentation included with this distribution is covered by the same copyright terms except that the holder is Tim Hudson (tjh@cryptsoft.com).\nCopyright remains Eric Young's, and as such any Copyright notices in the code are not to be removed. If this package is used in a product, Eric Young should be given attribution as the author of the parts of the library used. This can be in the form of a textual message at program startup or in documentation (online or textual) provided with the package.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n1. Redistributions of source code must retain the copyright notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the\ndocumentation and/or other materials provided with the distribution.\n3. All advertising materials mentioning features or use of this software must display the following acknowledgement:\n\"This product includes cryptographic software written by Eric Young (eay@cryptsoft.com)\"\nThe word 'cryptographic' can be left out if the rouines from the library being used are not cryptographic related :-).\n4. If you include any Windows specific code (or a derivative thereof) from the apps directory (application code) you must include an acknowledgement:\n\"This product includes software written by Tim Hudson (tjh@cryptsoft.com)\" THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\nThe licence and distribution terms for any publically available version or derivative of this code cannot be changed.  i.e. this code cannot simply be copied and put under another distribution licence [including the GNU Public Licence.]\n\nToni Ronkko (dirent)\nCopyright (c) 1998-2019 Toni Ronkko\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nMicrosoft Corporation (C++ REST SDK)\nCopyright (c) Microsoft Corporation\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nKutuzov Viktor (mman-win32)\nCopyright (c) Kutuzov Viktor\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nICONS\n\nSettings by i cons from the Noun Project";
+
+/* Class = "UILabel"; text = "UI Designer"; ObjectID = "oqY-wY-1Vf"; */
+"oqY-wY-1Vf.text" = "UI 设计";
+
+/* Class = "UILabel"; text = "Send Feedback"; ObjectID = "pMI-Aj-nQF"; */
+"pMI-Aj-nQF.text" = "发送反馈";
+
+/* Class = "UILabel"; text = "Profiles Management"; ObjectID = "prf-Mg-lbl"; */
+"prf-Mg-lbl.text" = "描述文件管理";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "rAc-lQ-B1k"; */
+"rAc-lQ-B1k.text" = "电子邮件";
+
+/* Class = "UILabel"; text = "View Refresh Attempts"; ObjectID = "sni-07-q0M"; */
+"sni-07-q0M.text" = "查看刷新记录";
+
+/* Class = "UILabel"; text = "Storage Explorer"; ObjectID = "stg-Ex-lbl"; */
+"stg-Ex-lbl.text" = "存储浏览器";
+
+/* Class = "UINavigationItem"; title = "Support us"; ObjectID = "uUV-1f-xEq"; */
+"uUV-1f-xEq.title" = "支持我们";
+
+/* Class = "UILabel"; text = "User Customizations"; ObjectID = "usr-Cst-lbl"; */
+"usr-Cst-lbl.text" = "用户自定义";
+
+/* Class = "UILabel"; text = "View Error Log"; ObjectID = "vH6-7i-tCE"; */
+"vH6-7i-tCE.text" = "查看错误日志";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "xvY-lN-Toz"; */
+"xvY-lN-Toz.text" = "名称";
+
+/* Class = "UILabel"; text = "Fabian (thdev)"; ObjectID = "ylE-VL-7Fq"; */
+"ylE-VL-7Fq.text" = "Fabian (thdev)";
+
+/* Class = "UILabel"; text = "Pairing File Management"; ObjectID = "ysS-9s-dXm"; */
+"ysS-9s-dXm.text" = "配对文件管理";

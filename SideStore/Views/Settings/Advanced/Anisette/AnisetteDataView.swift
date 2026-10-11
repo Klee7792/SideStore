@@ -716,7 +716,7 @@ struct AnisetteDataView: View {
         }
     }
     
-    private func sectionHeader(_ title: String) -> some View {
+    private func sectionHeader(_ title: LocalizedStringKey) -> some View {
         Text(title)
             .font(.system(size: 13, weight: .semibold))
             .foregroundColor(Color.white.opacity(0.6))
@@ -724,7 +724,7 @@ struct AnisetteDataView: View {
     }
     
     private func headerFieldRow(
-        title: String,
+        title: LocalizedStringKey,
         headerKey: String,
         text: Binding<String>,
         placeholder: String,
@@ -774,7 +774,7 @@ struct AnisetteDataView: View {
         .padding(.vertical, 8)
     }
     
-    private func infoTokenRow(title: String, headerKey: String, subtitle: String) -> some View {
+    private func infoTokenRow(title: LocalizedStringKey, headerKey: String, subtitle: LocalizedStringKey) -> some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 3) {
                 HStack {

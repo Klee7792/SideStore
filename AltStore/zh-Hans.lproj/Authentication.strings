@@ -1,0 +1,90 @@
+
+/* Class = "UILabel"; text = "2"; ObjectID = "0LW-eE-qHa"; */
+"0LW-eE-qHa.text" = "2";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "2N5-zd-fUj"; */
+"2N5-zd-fUj.normalTitle" = "登录";
+
+/* Class = "UILabel"; text = "Enable LocalDevVPN and use Sidestore on the go."; ObjectID = "4rk-ge-FSj"; */
+"4rk-ge-FSj.text" = "启用 LocalDevVPN，随时随地使用 SideStore。";
+
+/* Class = "UILabel"; text = "APPLE ID"; ObjectID = "59N-O1-6bM"; */
+"59N-O1-6bM.text" = "Apple ID";
+
+/* Class = "UINavigationItem"; title = "Resign SideStore"; ObjectID = "5nk-NR-jtV"; */
+"5nk-NR-jtV.title" = "重新签名 SideStore";
+
+/* Class = "UILabel"; text = "Leave SideStore running in the background on your idevice."; ObjectID = "6HP-Xh-sAH"; */
+"6HP-Xh-sAH.text" = "让 SideStore 在你的设备上保持后台运行。";
+
+/* Class = "UILabel"; text = "Team 1"; ObjectID = "6ip-34-gmM"; */
+"6ip-34-gmM.text" = "Team 1";
+
+/* Class = "UILabel"; text = "PASSWORD"; ObjectID = "Ava-XY-7vs"; */
+"Ava-XY-7vs.text" = "密码";
+
+/* Class = "UITextField"; placeholder = "name@email.com"; ObjectID = "DBu-vt-hlo"; */
+"DBu-vt-hlo.placeholder" = "name@email.com";
+
+/* Class = "UILabel"; text = "Welcome to SideStore."; ObjectID = "EI2-V3-zQZ"; */
+"EI2-V3-zQZ.text" = "欢迎使用 SideStore。";
+
+/* Class = "UILabel"; text = "Apps are refreshed in the background while you are on SideStore VPN!"; ObjectID = "HU5-Hv-E3d"; */
+"HU5-Hv-E3d.text" = "使用 SideStore VPN 时，应用会在后台刷新！";
+
+/* Class = "UILabel"; text = "Download Apps"; ObjectID = "JeJ-bk-UCA"; */
+"JeJ-bk-UCA.text" = "下载应用";
+
+/* Class = "UILabel"; text = "Browse and download apps directly from SideStore."; ObjectID = "M7T-9j-uyt"; */
+"M7T-9j-uyt.text" = "直接从 SideStore 浏览并下载应用。";
+
+/* Class = "UITextField"; placeholder = "••••••••"; ObjectID = "R77-TQ-lVT"; */
+"R77-TQ-lVT.placeholder" = "••••••••";
+
+/* Class = "UILabel"; text = "Sign in with your Apple ID to get started."; ObjectID = "SNU-tv-8Au"; */
+"SNU-tv-8Au.text" = "使用你的 Apple ID 登录即可开始。";
+
+/* Class = "UILabel"; text = "Launch SideStore"; ObjectID = "XKD-XH-eB0"; */
+"XKD-XH-eB0.text" = "启动 SideStore";
+
+/* Class = "UINavigationItem"; title = "How it works"; ObjectID = "bCq-Jq-gf1"; */
+"bCq-Jq-gf1.title" = "工作原理";
+
+/* Class = "UILabel"; text = "Connect to Wi-Fi and VPN"; ObjectID = "esj-pD-D4A"; */
+"esj-pD-D4A.text" = "连接到 Wi-Fi 和 VPN";
+
+/* Class = "UILabel"; text = "4"; ObjectID = "i2U-NL-plG"; */
+"i2U-NL-plG.text" = "4";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "i9V-3h-B8f"; */
+"i9V-3h-B8f.text" = "1";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "knk-Wf-PKf"; */
+"knk-Wf-PKf.text" = "描述";
+
+/* Class = "UIBarButtonItem"; title = "Close"; ObjectID = "nDc-Zs-wnK"; */
+"nDc-Zs-wnK.title" = "关闭";
+
+/* Class = "UILabel"; text = "3"; ObjectID = "nVr-El-Csi"; */
+"nVr-El-Csi.text" = "3";
+
+/* Class = "UILabel"; text = "Apps Refresh Automatically"; ObjectID = "nvb-Aq-sYa"; */
+"nvb-Aq-sYa.text" = "应用自动刷新";
+
+/* Class = "UILabel"; text = "Your Apple ID is used to configure apps so they can be installed on this device. Your credentials will be stored securely in this device's Keychain and sent only to Apple for authentication."; ObjectID = "on2-62-waY"; */
+"on2-62-waY.text" = "你的 Apple ID 将用于配置应用，以便将它们安装到这台设备上。你的凭证将安全存储在这台设备的钥匙串中，并且只会发送给 Apple 用于身份验证。";
+
+/* Class = "UILabel"; text = "Why do we need this?"; ObjectID = "p9U-0q-Kn8"; */
+"p9U-0q-Kn8.text" = "为什么需要这个？";
+
+/* Class = "UIButton"; normalTitle = "Got it"; ObjectID = "qZ9-AR-2zK"; */
+"qZ9-AR-2zK.normalTitle" = "知道了";
+
+/* Class = "UIButton"; normalTitle = "Resign Later"; ObjectID = "qua-VA-asJ"; */
+"qua-VA-asJ.normalTitle" = "稍后重新签名";
+
+/* Class = "UINavigationItem"; title = "Select a Team"; ObjectID = "qxJ-Go-OPq"; */
+"qxJ-Go-OPq.title" = "选择团队";
+
+/* Class = "UIButton"; normalTitle = "Resign Now"; ObjectID = "xcg-hT-tDe"; */
+"xcg-hT-tDe.normalTitle" = "立即重新签名";

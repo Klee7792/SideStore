@@ -492,7 +492,7 @@ struct SideSignConfigurationView: View {
         }
     }
 
-    private func sectionHeader(_ title: String) -> some View {
+    private func sectionHeader(_ title: LocalizedStringKey) -> some View {
         Text(title)
             .font(.system(size: 13, weight: .semibold))
             .foregroundColor(Color.white.opacity(0.6))
@@ -500,7 +500,7 @@ struct SideSignConfigurationView: View {
     }
 
     private func headerFieldRow(
-        title: String,
+        title: LocalizedStringKey,
         headerKey: String,
         text: Binding<String>,
         placeholder: String,

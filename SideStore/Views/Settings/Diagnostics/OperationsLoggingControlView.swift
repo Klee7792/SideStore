@@ -13,7 +13,7 @@ private extension Color {
     static let settingsDivider = Color.white.opacity(0.15)
 }
 
-private let pipelineStepToggles: [(name: String, step: PipelineStep)] = [
+private let pipelineStepToggles: [(name: LocalizedStringKey, step: PipelineStep)] = [
     ("Backup App Data",                         .backupAppData),
     ("Cache App",                               .cacheApp),
     ("Change App Icon",                         .changeAppIcon),
@@ -41,7 +41,7 @@ private let pipelineStepToggles: [(name: String, step: PipelineStep)] = [
     ("Create IPA",                              .createIPA),
 ]
 
-private let standaloneStepToggles: [(name: String, step: StandaloneStep)] = [
+private let standaloneStepToggles: [(name: LocalizedStringKey, step: StandaloneStep)] = [
     ("Sign In",                                 .signIn),
     ("Background Refresh Apps",                 .backgroundRefreshApps),
     ("Clear App Cache",                         .clearAppCache),
@@ -106,7 +106,7 @@ struct OperationsLoggingControlView: View {
         #endif
     }
 
-    private func stepToggle(_ title: String, step: some OperationStep) -> some View {
+    private func stepToggle(_ title: LocalizedStringKey, step: some OperationStep) -> some View {
         HStack {
             Text(title)
                 .font(.system(size: 17, weight: .bold))

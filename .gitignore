@@ -10,6 +10,7 @@ Pods/
 
 ## Build generated
 build/
+build1/
 DerivedData
 
 SideStore.xcarchive

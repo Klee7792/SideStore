@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; configuration.title = " "; ObjectID = "1lg-Ki-MOK"; */
+"1lg-Ki-MOK.configuration.title" = " ";
+
+/* Class = "UIButton"; normalTitle = " "; ObjectID = "1lg-Ki-MOK"; */
+"1lg-Ki-MOK.normalTitle" = " ";
+
+/* Class = "UILabel"; text = "Source Name"; ObjectID = "FsG-Wm-6xP"; */
+"FsG-Wm-6xP.text" = "Source Name";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "IUL-qI-QAg"; */
+"IUL-qI-QAg.text" = "Subtitle";
+
+/* Class = "UIButton"; configuration.title = "https://rileytestut.com"; ObjectID = "cDF-t8-8Ri"; */
+"cDF-t8-8Ri.configuration.title" = "https://rileytestut.com";
+
+/* Class = "UIButton"; normalTitle = "https://rileytestut.com"; ObjectID = "cDF-t8-8Ri"; */
+"cDF-t8-8Ri.normalTitle" = "https://rileytestut.com";

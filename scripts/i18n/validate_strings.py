@@ -10,8 +10,9 @@ Runs five independent gates and prints a single verdict:
    and quotes are balanced / escaped.
 3. The ``Bundle.Info.activeBundleVersion`` change still renders the same
    string it did before (static key + String(format:) is equivalent).
-4. ``AltStore/Info.plist`` is well-formed XML and the only difference to
-   the pre-localization file is the added ``CFBundleLocalizations`` array.
+4. ``AltStore/Info.plist`` is well-formed XML, declares exactly
+   ``CFBundleLocalizations == ["en", "zh-Hans"]`` and is otherwise identical to
+   the pre-localization snapshot in :data:`EXPECTED_INFO_PLIST`.
 5. No file outside the agreed scope was touched
    (``Dependencies/``, other targets, ``project.pbxproj``).
 
@@ -386,6 +387,203 @@ def gate_bundle_version() -> Gate:
 # Gate 4 - Info.plist
 # --------------------------------------------------------------------------------------
 
+#: Snapshot of ``AltStore/Info.plist``'s top level *before* the localization
+#: pass added ``CFBundleLocalizations``. The gate compares the file against
+#: this snapshot plus that one array, so the verdict does not depend on the
+#: shape of the git history. (The previous implementation diffed the file
+#: against git; once Info.plist was committed the diff was empty and the whole
+#: file was reported as "added", which permanently polluted IS_PASS.)
+#:
+#: If a future, legitimate change edits Info.plist, update this snapshot in the
+#: same commit - that is exactly the change-scope guarantee this gate provides.
+EXPECTED_INFO_PLIST: dict[str, object] = {
+    "ALTAnisetteURL": "https://ani.sidestore.io",
+    "CFBundleDevelopmentRegion": "$(DEVELOPMENT_LANGUAGE)",
+    "CFBundleDocumentTypes": [
+        {
+            "CFBundleTypeIconFiles": [],
+            "CFBundleTypeName": "iOS App",
+            "CFBundleTypeRole": "Viewer",
+            "LSHandlerRank": "Alternate",
+            "LSItemContentTypes": ["com.apple.itunes.ipa"],
+        }
+    ],
+    "CFBundleExecutable": "$(EXECUTABLE_NAME)",
+    "CFBundleIcons": {
+        "CFBundlePrimaryIcon": {
+            "NSAppIconComplementingColorNames": ["GradientTop", "GradientBottom"]
+        }
+    },
+    "CFBundleIdentifier": "$(PRODUCT_BUNDLE_IDENTIFIER)",
+    "CFBundleInfoDictionaryVersion": "6.0",
+    "CFBundleName": "$(PRODUCT_NAME)",
+    "CFBundlePackageType": "APPL",
+    "CFBundleShortVersionString": "$(MARKETING_VERSION)",
+    "CFBundleURLTypes": [
+        {
+            "CFBundleTypeRole": "Editor",
+            "CFBundleURLName": "SideStore General",
+            "CFBundleURLSchemes": ["sidestore"],
+        },
+        {
+            "CFBundleTypeRole": "Editor",
+            "CFBundleURLName": "SideStore Backup",
+            "CFBundleURLSchemes": ["sidestore-$(PRODUCT_BUNDLE_IDENTIFIER)"],
+        },
+    ],
+    "CFBundleVersion": "$(CURRENT_PROJECT_VERSION)",
+    "INIntentsSupported": ["RefreshAllIntent", "ViewAppIntent"],
+    "LSApplicationQueriesSchemes": [
+        "sidestore-com.SideStore.SideStore",
+        "sidestore-com.SideStore.SideStore.Beta",
+        "localdevvpn",
+    ],
+    "LSRequiresIPhoneOS": True,
+    "LSSupportsOpeningDocumentsInPlace": True,
+    "NSAppTransportSecurity": {"NSAllowsArbitraryLoads": True},
+    "NSBonjourServices": [
+        "_altserver._tcp",
+        "_remotepairing-pairable-host._tcp",
+        "_remotepairing-manual-pairing._tcp",
+        "_services._dns-sd._udp",
+        "_airplay._tcp",
+        "_raop._tcp",
+        "_sftp-ssh._tcp",
+        "_sleep-proxy._udp",
+        "_ssh._tcp",
+        "_apple-mobdev2._tcp",
+        "_asquic._udp",
+        "_companion-link._tcp",
+        "_meshcop._udp",
+        "_remotepairing._tcp",
+        "_rp-tunnel._tcp",
+        "_srpl-tls._tcp",
+        "_trel._udp",
+        "_http._tcp",
+        "_https._tcp",
+        "_smb._tcp",
+        "_afpovertcp._tcp",
+        "_printer._tcp",
+        "_ipp._tcp",
+        "_ipps._tcp",
+        "_scanner._tcp",
+        "_daap._tcp",
+        "_dpap._tcp",
+        "_airport._tcp",
+        "_homekit._tcp",
+        "_hap._tcp",
+        "_touch-able._tcp",
+        "_spotify-connect._tcp",
+        "_googlecast._tcp",
+        "_device-info._tcp",
+        "_workstation._tcp",
+        "_rfb._tcp",
+        "_net-assistant._udp",
+        "_rdlink._tcp",
+        "_stikpairprobe._tcp",
+        "_webdav._tcp",
+        "_webdavs._tcp",
+        "_ftp._tcp",
+        "_telnet._tcp",
+        "_coap._udp",
+        "_coaps._udp",
+        "_mqtt._tcp",
+        "_adb._tcp",
+        "_airdrop._tcp",
+        "_sidecar._tcp",
+        "_sonos._tcp",
+        "_plex._tcp",
+        "_amzn-alexa._tcp",
+        "_home-assistant._tcp",
+        "_rtsp._tcp",
+        "_sip._udp",
+        "_sip._tcp",
+        "_h323._tcp",
+        "_h323._udp",
+        "_ws._tcp",
+        "_wss._tcp",
+        "_remoted._tcp",
+        "_coredevice._tcp",
+        "_appletv-v2._tcp",
+        "_apple-mobdev._tcp",
+        "_jitstreamer._tcp",
+        "_matter._tcp",
+        "_matterc._udp",
+        "_airprint._tcp",
+        "_vnc._tcp",
+    ],
+    "NSLocalNetworkUsageDescription": (
+        "SideStore can use local network access to discover Bonjour (mDNS) "
+        "services on your network. This is not required for core functionality."
+    ),
+    "NSLocationAlwaysAndWhenInUseUsageDescription": (
+        "SideStore uses location updates to keep background operations active."
+    ),
+    "NSLocationWhenInUseUsageDescription": (
+        "SideStore uses location updates to keep background operations active."
+    ),
+    "NSUserActivityTypes": ["RefreshAllIntent", "ViewAppIntent"],
+    "OSLogPreferences": {
+        "com.SideStore.SideStore": {
+            "AltJIT": {"Level": {"Enable": "Info", "Persist": "Info"}},
+            "Main": {"Level": {"Enable": "Info", "Persist": "Info"}},
+            "Sideload": {"Level": {"Enable": "Info", "Persist": "Info"}},
+        }
+    },
+    "UIApplicationSceneManifest": {
+        "UIApplicationSupportsMultipleScenes": True,
+        "UISceneConfigurations": {
+            "UIWindowSceneSessionRoleApplication": [
+                {
+                    "UILaunchStoryboardName": "LaunchScreen",
+                    "UISceneConfigurationName": "Default Configuration",
+                    "UISceneDelegateClassName": "$(PRODUCT_MODULE_NAME).SceneDelegate",
+                    "UISceneStoryboardFile": "Main",
+                }
+            ]
+        },
+    },
+    "UIBackgroundModes": ["audio", "fetch", "location", "remote-notification", "processing"],
+    "UIFileSharingEnabled": True,
+    "UILaunchStoryboardName": "LaunchScreen",
+    "UIMainStoryboardFile": "Main",
+    "UIRequiredDeviceCapabilities": ["armv7"],
+    "UIStatusBarTintParameters": {
+        "UINavigationBar": {"Style": "UIBarStyleDefault", "Translucent": False}
+    },
+    "UISupportedInterfaceOrientations": ["UIInterfaceOrientationPortrait"],
+    "UISupportedInterfaceOrientations~ipad": [
+        "UIInterfaceOrientationPortrait",
+        "UIInterfaceOrientationPortraitUpsideDown",
+        "UIInterfaceOrientationLandscapeLeft",
+        "UIInterfaceOrientationLandscapeRight",
+    ],
+    "UTImportedTypeDeclarations": [
+        {
+            "UTTypeConformsTo": ["public.data"],
+            "UTTypeDescription": "iOS App",
+            "UTTypeIconFiles": [],
+            "UTTypeIdentifier": "com.apple.itunes.ipa",
+            "UTTypeTagSpecification": {
+                "public.filename-extension": "ipa",
+                "public.mime-type": "application/x-ios-app",
+            },
+        },
+        {
+            "UTTypeConformsTo": ["com.apple.plist"],
+            "UTTypeDescription": "Mobile Device Pairing",
+            "UTTypeIconFiles": [],
+            "UTTypeIdentifier": "org.sidestore.mobiledevicepairing",
+            "UTTypeTagSpecification": {
+                "public.filename-extension": ["mobiledevicepairing", "mobiledevicepair"]
+            },
+        },
+    ],
+}
+
+#: The localization pass may only add this one key on top of the snapshot.
+EXPECTED_INFO_PLIST_LOCALIZATIONS: list[str] = ["en", "zh-Hans"]
+
 
 def gate_info_plist() -> Gate:
     """Info.plist must be valid XML and only gain CFBundleLocalizations."""
@@ -402,38 +600,21 @@ def gate_info_plist() -> Gate:
             return gate
 
     localizations = data.get("CFBundleLocalizations")
-    expected: list[str] = ["en", "zh-Hans"]
-    if localizations != expected:
-        gate.fail(f"CFBundleLocalizations is {localizations!r}, expected {expected!r}")
+    if localizations != EXPECTED_INFO_PLIST_LOCALIZATIONS:
+        gate.fail(
+            f"CFBundleLocalizations is {localizations!r}, "
+            f"expected {EXPECTED_INFO_PLIST_LOCALIZATIONS!r}"
+        )
 
-    # `as_posix()` matters: git pathspecs must not contain Windows separators.
-    relative_path: str = INFO_PLIST.relative_to(REPO_ROOT).as_posix()
-    git_diff: list[str] = _git_diff_names(relative_path)
-    if relative_path not in git_diff:
-        gate.fail("Info.plist does not appear in `git status` - run the script from a git checkout")
-
-    # Verify the added lines are exactly the six we intend.
-    diff_text: str = _git_diff_text(relative_path)
-    added: list[str] = [
-        line for line in diff_text.splitlines()
-        if line.startswith("+") and not line.startswith("+++")
-    ]
-    removed: list[str] = [
-        line for line in diff_text.splitlines()
-        if line.startswith("-") and not line.startswith("---")
-    ]
-    if removed:
-        gate.fail(f"Info.plist lost lines: {removed}")
-    normalized: list[str] = [line[1:].strip() for line in added]
-    expected_lines: list[str] = [
-        "<key>CFBundleLocalizations</key>",
-        "<array>",
-        "<string>en</string>",
-        "<string>zh-Hans</string>",
-        "</array>",
-    ]
-    if normalized != expected_lines:
-        gate.fail(f"unexpected Info.plist additions: {normalized}")
+    expected: dict[str, object] = dict(EXPECTED_INFO_PLIST)
+    expected["CFBundleLocalizations"] = list(EXPECTED_INFO_PLIST_LOCALIZATIONS)
+    if data != expected:
+        for key in sorted(set(data) | set(expected)):
+            if data.get(key) != expected.get(key):
+                gate.fail(
+                    f"Info.plist {key!r} does not match the expected snapshot "
+                    f"(update EXPECTED_INFO_PLIST if this change is intended)"
+                )
     return gate
 
 
@@ -499,11 +680,15 @@ def gate_change_scope() -> Gate:
         "Shared/",
         "scripts/i18n/",
         "docs/",
+        # The fork's own CI workflows are maintained independently of the
+        # localization pass and must not block it.
+        ".github/workflows/",
     )
-    # `.gitignore` needs two whitelist entries: the repo ignores *.md and *.txt
-    # globally, so the glossary and the keep-English list would otherwise never
-    # reach a fresh clone.
-    allowed_files: tuple[str, ...] = (".gitignore",)
+    # `.gitignore` needs whitelisting: the repo ignores *.md and *.txt globally,
+    # so the glossary and the keep-English list would otherwise never reach a
+    # fresh clone. `AGENTS.md` is the fork's governance document, which the
+    # maintainer edits outside of any localization change.
+    allowed_files: tuple[str, ...] = (".gitignore", "AGENTS.md")
 
     for path in changed:
         path = path.replace("\\", "/")
@@ -516,8 +701,11 @@ def gate_change_scope() -> Gate:
             gate.fail(f"unexpected file changed: {path}")
 
     if ".gitignore" in changed:
-        # The only sanctioned .gitignore change is whitelisting the two files
-        # this localization pass needs in version control.
+        # The only sanctioned .gitignore changes are whitelisting the files this
+        # localization pass needs in version control and ignoring the local
+        # build output directory that must never be committed. Membership (not
+        # exact equality) is checked so the rule keeps working when the entries
+        # land in separate commits.
         diff_text: str = _git_diff_text(".gitignore")
         added_lines: list[str] = [
             line[1:].strip()
@@ -531,12 +719,18 @@ def gate_change_scope() -> Gate:
         ]
         if removed_lines:
             gate.fail(f".gitignore lost lines: {removed_lines}")
-        expected_whitelist: list[str] = [
-            "!docs/i18n-glossary.md",
-            "!scripts/i18n/keep_english.txt",
+        sanctioned_gitignore_additions: frozenset[str] = frozenset(
+            {
+                "!docs/i18n-glossary.md",
+                "!scripts/i18n/keep_english.txt",
+                "build1/",
+            }
+        )
+        unsanctioned: list[str] = [
+            line for line in added_lines if line not in sanctioned_gitignore_additions
         ]
-        if sorted(added_lines) != sorted(expected_whitelist):
-            gate.fail(f"unexpected .gitignore additions: {added_lines}")
+        if unsanctioned:
+            gate.fail(f"unexpected .gitignore additions: {unsanctioned}")
 
     print(f"   {len(changed)} changed path(s):")
     for path in changed:

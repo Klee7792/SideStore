@@ -1,0 +1,18 @@
+
+/* Class = "UINavigationItem"; title = "All News"; ObjectID = "FGB-cd-Vkd"; */
+"FGB-cd-Vkd.title" = "全部动态";
+
+/* Class = "UINavigationItem"; title = "Sources"; ObjectID = "Noh-fc-wch"; */
+"Noh-fc-wch.title" = "软件源";
+
+/* Class = "UICollectionViewController"; title = "Sources"; ObjectID = "Wm7-1O-FkD"; */
+"Wm7-1O-FkD.title" = "软件源";
+
+/* Class = "UINavigationItem"; title = "All Apps"; ObjectID = "rUb-ON-AON"; */
+"rUb-ON-AON.title" = "全部应用";
+
+/* Class = "UINavigationItem"; title = "Add Source"; ObjectID = "v46-dC-g7e"; */
+"v46-dC-g7e.title" = "添加软件源";
+
+/* Class = "UITabBarItem"; title = "Sources"; ObjectID = "xPv-dc-X4v"; */
+"xPv-dc-X4v.title" = "软件源";

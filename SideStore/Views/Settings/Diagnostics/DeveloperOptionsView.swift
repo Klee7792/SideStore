@@ -94,9 +94,9 @@ struct DeveloperOptionsView: View {
                         divider
                         
                         #if !os(tvOS)
-                        let title = "Widget Verbose Logging"
+                        let title: LocalizedStringKey = "Widget Verbose Logging"
                         #else
-                        let title = "Top Shelf Verbose Logging"
+                        let title: LocalizedStringKey = "Top Shelf Verbose Logging"
                         #endif
                         toggleRow(title: title, isOn: Binding(
                             get: { isAltWidgetVerboseLoggingEnabled },
@@ -161,9 +161,9 @@ struct DeveloperOptionsView: View {
                 // Section: Widget Options
                 VStack(alignment: .leading, spacing: 8) {
                     #if !os(tvOS)
-                    let title = "WIDGET OPTIONS"
+                    let title: LocalizedStringKey = "WIDGET OPTIONS"
                     #else
-                    let title = "TOP SHELF OPTIONS"
+                    let title: LocalizedStringKey = "TOP SHELF OPTIONS"
                     #endif
                     Text(title)
                         .font(.system(size: 13, weight: .semibold))
@@ -178,9 +178,9 @@ struct DeveloperOptionsView: View {
                                     .foregroundColor(.white)
 
                                 #if !os(tvOS)
-                                let title = "Reload All Widgets"
+                                let title: LocalizedStringKey = "Reload All Widgets"
                                 #else
-                                let title = "Reload Top Shelf"
+                                let title: LocalizedStringKey = "Reload Top Shelf"
                                 #endif
                                 Text(title)
                                     .font(.system(size: 17, weight: .bold))
@@ -200,9 +200,9 @@ struct DeveloperOptionsView: View {
                                     .foregroundColor(.white)
                                 
                                 #if !os(tvOS)
-                                let title = "Rotate Widget Log"
+                                let title: LocalizedStringKey = "Rotate Widget Log"
                                 #else
-                                let title = "Rotate Top Shelf Log"
+                                let title: LocalizedStringKey = "Rotate Top Shelf Log"
                                 #endif
                                 Text(title)
                                     .font(.system(size: 17, weight: .bold))
@@ -786,7 +786,7 @@ struct DeveloperOptionsView: View {
         }
     }
     
-    private func toggleRow(title: String, isOn: Binding<Bool>) -> some View {
+    private func toggleRow(title: LocalizedStringKey, isOn: Binding<Bool>) -> some View {
         HStack {
             Text(title)
                 .font(.system(size: 17, weight: .bold))

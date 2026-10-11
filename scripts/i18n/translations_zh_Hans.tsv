@@ -1158,3 +1158,151 @@ Loading directory contents...	正在载入目录内容…
 Mac	Mac
 Machine Name	机器名称
 Make sure you're connected to a local network.	请确保已连接到本地网络。
+
+# --- LocalizedStringKey helper pass (translated) ---
+# These keys were extracted after the title parameters of private SwiftUI
+# helpers were changed from String to LocalizedStringKey. All of them are now
+# translated. Three are deliberately kept in English (all-caps protocol names
+# / an Apple header name) and stay listed in keep_english.txt:
+#   APPLE AUTH (IDMSA), GRANDSLAM AUTH (GSA), App ID Key
+ACTIONS	操作
+ALL RAW KEYS	全部原始键
+APP IDENTITY	应用身份
+APPLE AUTH (IDMSA)	APPLE AUTH (IDMSA)
+Accept IPv6 Config	接受 IPv6 配置
+App File Size Check	应用文件大小校验
+App ID Key	App ID Key
+App Version Check	应用版本校验
+Auth App	认证应用
+Auto Retry RemotePairing Port	自动重试 RemotePairing 端口
+Auto-Fix AppGroup IDs	自动修正 AppGroup ID
+Auto-Launch App After Install	安装后自动打开应用
+Auto-Rotation	自动轮换
+Automatically open apps after installation completes	安装完成后自动打开应用
+Automatically toggle cellular data via Shortcuts during refresh	刷新期间通过“快捷指令”自动开关蜂窝数据
+Background Refresh Apps	后台刷新应用
+Backup App Data	备份应用数据
+Base wait time after turning off data (seconds, ≥ 0)	关闭数据后的基础等待时间（秒，≥ 0）
+Base wait time after turning on data (seconds, ≥ 0)	打开数据后的基础等待时间（秒，≥ 0）
+Bundle Identifier Check	Bundle Identifier 校验
+CAPABILITIES & SHARING	能力与共享
+Cache App	缓存应用
+Cellular Refresh	蜂窝数据刷新
+Certificate ID	证书 ID
+Checksum (SHA-256) Check	校验和（SHA-256）校验
+Clean Staged App	清理暂存应用
+Clear App Cache	清除应用缓存
+Clear Customizations on Uninstall	卸载时清除自定义设置
+Client ID	客户端 ID
+Client Info	客户端信息
+Client Time	客户端时间
+Confirm App Installation	安装前确认
+Create IPA	创建 IPA
+Created By	创建者
+Customize AppID	自定义 AppID
+Customize Provisioning Profile	自定义描述文件
+DEVELOPER SERVICES	开发者服务
+DEVICE & IDENTITY	设备与身份
+DYNAMIC CRYPTOGRAPHIC TOKENS	动态加密令牌
+Deactivate App	停用应用
+Device Identifier	设备标识符
+Disable All Verifications	停用全部校验
+Disable URL Response Caching	停用 URL 响应缓存
+Download App	下载应用
+EMProxy (WireGuard) Server	EMProxy (WireGuard) 服务器
+ENVIRONMENT & LOCALIZATION	环境与语言
+Enable Background Keepalive	启用后台保活
+Enable Minimuxer Backend Hotswap	启用 Minimuxer 后端热切换
+Export Resigned IPA	导出已重新签名的 IPA
+Export Resigned IPAs	导出已重新签名的 IPA
+Fetch Provisioning Profiles	获取描述文件
+Fetch Source	获取软件源
+GRANDSLAM AUTH (GSA)	GRANDSLAM AUTH (GSA)
+Hardware identifier computed from adi.pb and device identity	根据 adi.pb 和设备身份计算出的硬件标识符
+Has Private Key	包含私钥
+Header Version	Header 版本
+ISO8601 UTC timestamp locked to OTP generation time	与 OTP 生成时间绑定的 ISO8601 UTC 时间戳
+Issuer	颁发者
+Local User ID	本地用户 ID
+Locale	语言区域
+Machine ID	机器 ID
+Managed	托管
+Minimuxer Verbose Logging	Minimuxer 详细日志
+Name of the shortcut in Apple Shortcuts app	“快捷指令”App 中的快捷指令名称
+On-Device Anisette	设备端 Anisette
+One-Time Password (OTP)	一次性密码（OTP）
+Operations Verbose Logging	操作详细日志
+Owner ID	所有者 ID
+Owner Name	所有者名称
+PRIMARY CLIENT HEADERS	主要客户端请求头
+Permission Checks	权限检查
+Platform	平台
+Platform Name	平台名称
+Prefer IPA (speed) vs App (storage) efficiency	优先 IPA（速度）还是 App（存储）效率
+Prefer Resigned IPA	优先使用已重新签名的 IPA
+Prefer Sheet for Entitlements	权限使用 sheet 展示
+Prefer Sheet for Info.plist	Info.plist 使用 sheet 展示
+Preflight Checks	预检
+Prepare App Extension Bundle IDs	准备应用扩展 Bundle ID
+Prompt for confirmation before installing or importing an app	安装或导入应用前弹出确认提示
+Prompt to choose a custom icon before installing	安装前提示选择自定义图标
+Prompt to select a provisioning profile before installing	安装前提示选择描述文件
+Protocol Version	协议版本
+Public Key	公钥
+RAW CONFIGURATION JSON	原始配置 JSON
+REMOTE SERVER SYNC	远程服务器同步
+Refresh App	刷新应用
+Remove App	移除应用
+Remove Backup Data	移除备份数据
+Requester Email	请求者邮箱
+Reset assigned profiles, custom certificates, and metadata when an app is deleted	删除应用时重置已分配的描述文件、自定义证书和元数据
+Resign App	重新签名应用
+Restart required to apply changes	需要重启才能应用更改
+Restore App Data	恢复应用数据
+Rotate Logs on Startup	启动时轮换日志
+Routing Info	路由信息
+Run ADI emulation directly on device instead of remote servers	在设备上直接运行 ADI 模拟，而非使用远程服务器
+Schedule Expiration Warning	安排到期提醒
+Send App	发送应用
+Serial Number	序列号
+Serial Number (dec)	序列号（十进制）
+Serial Number (hex)	序列号（十六进制）
+Service	服务
+Services Version	服务版本
+Show WireGuard Settings	显示 WireGuard 设置
+SideSign Verbose Logging	SideSign 详细日志
+SideStore Verbose Logging	SideStore 详细日志
+Signature Algorithm	签名算法
+Signed HMAC token dynamically calculated by ADI engine per request	由 ADI 引擎按请求动态计算的 HMAC 签名令牌
+Skip Uncopyable Backup Files	跳过无法拷贝的备份文件
+Stage App	暂存应用
+Stage Backup App	暂存备份应用
+Subject	主题
+Sync App IDs	同步 App ID
+Time Zone	时区
+Top Shelf Verbose Logging	Top Shelf 详细日志
+Turn Off Base Delay	关闭数据后的基础延迟
+Turn Off Cellular Shortcut	关闭蜂窝数据的快捷指令
+Turn On Base Delay	打开数据后的基础延迟
+Turn On Cellular Shortcut	打开蜂窝数据的快捷指令
+Type Name	类型名称
+Update App Certificate	更新应用证书
+Use sheet instead of dialog	使用 sheet 而非对话框
+User Agent	用户代理
+User Customization	用户自定义
+VERSIONING	版本
+Valid From	生效日期
+Valid Until	失效日期
+Validity Days	有效天数
+Verify App	校验应用
+Verify Certificate	校验证书
+Widget Verbose Logging	Widget 详细日志
+Wipe Database on Next Start	下次启动时清空数据库
+Xcode Version	Xcode 版本
+iOS Version Check	iOS 版本校验
+Reload All Widgets	重新载入全部 Widget
+Reload Top Shelf	重新载入 Top Shelf
+Rotate Top Shelf Log	轮换 Top Shelf 日志
+Rotate Widget Log	轮换 Widget 日志
+TOP SHELF OPTIONS	Top Shelf 选项
+WIDGET OPTIONS	Widget 选项

@@ -945,7 +945,7 @@ public struct InfoPlistCustomizationCoreView: View {
         }
     }
 
-    private func sectionHeader(title: String, icon: String) -> some View {
+    private func sectionHeader(title: LocalizedStringKey, icon: String) -> some View {
         HStack(spacing: 5) {
             Image(systemName: icon)
                 .font(.system(size: 11, weight: .semibold))

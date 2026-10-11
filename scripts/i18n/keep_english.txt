@@ -43,3 +43,11 @@ ms
 •
 ••••••••••••••••••••••••••••
 ⚠️ 
+
+# --- Kept English from the LocalizedStringKey helper pass ---
+# The other 138 keys from that pass are now translated in
+# translations_zh_Hans.tsv; these three stay verbatim because they are
+# all-caps protocol names or an Apple header name, not prose.
+APPLE AUTH (IDMSA)
+App ID Key
+GRANDSLAM AUTH (GSA)

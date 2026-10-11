@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Yd9-jw-faD"; */
+"Yd9-jw-faD.text" = "Label";
+
+/* Class = "UILabel"; text = "App Name"; ObjectID = "mFe-zJ-eva"; */
+"mFe-zJ-eva.text" = "App Name";
+
+/* Class = "UILabel"; text = "Developer"; ObjectID = "oN5-vu-Dnw"; */
+"oN5-vu-Dnw.text" = "开发者";
+
+/* Class = "UIButton"; normalTitle = "FREE"; ObjectID = "tVx-3G-dcu"; */
+"tVx-3G-dcu.normalTitle" = "FREE";

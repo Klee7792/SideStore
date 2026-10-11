@@ -17,13 +17,13 @@ import plistlib
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 sys.path.insert(0, HERE)
 
 from mini_format import format as swift_format  # noqa: E402
 from placeholders import analyze  # noqa: E402
-from strings_syntax import parse_file  # noqa: E402
-
-REPO = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
+from source_keys import source_string_set  # noqa: E402
+from strings_syntax import StringsParser, parse_file  # noqa: E402
 ZH_DIR = os.path.join(REPO, "AltStore", "zh-Hans.lproj")
 LOCALIZABLE = os.path.join(ZH_DIR, "Localizable.strings")
 INFOPLIST_STRINGS = os.path.join(ZH_DIR, "InfoPlist.strings")
@@ -250,6 +250,145 @@ def check_infoplist_strings() -> None:
     emit("F. InfoPlist.strings keys vs Info.plist", "FAIL" if bad else "PASS", lines)
 
 
+def check_pipeline_integrity() -> None:
+    """Deliverable-level integrity: counts, coverage, and 'no key silently dropped'.
+
+    Derived on every run from the pipeline's own `extracted.json` plus the committed
+    baseline, so it survives the entry count growing (1151 -> 1286) without needing a
+    magic number maintained by hand.
+    """
+    import json
+    import subprocess
+
+    lines: list[str] = []
+    bad = False
+    res, _ = parse_file(LOCALIZABLE)
+    keys = {e.key for e in res.entries}
+
+    # 1. rendered file must agree with the extractor's declared key count
+    with open(os.path.join(REPO, "scripts", "i18n", "extracted.json"), encoding="utf-8-sig") as fh:
+        extracted = json.load(fh)
+    declared = extracted.get("total_unique_keys")
+    lines.append(f"rendered entries = {len(res.entries)}; extracted.json declares {declared}")
+    if declared != len(res.entries):
+        bad = True
+        lines.append("    MISMATCH - render is out of sync with extract")
+    lines.append(f"    by_kind: {extracted.get('by_kind')}")
+
+    # 2. tsv + keep_english must cover every key exactly once
+    with open(os.path.join(REPO, "scripts", "i18n", "translations_zh_Hans.tsv"),
+              encoding="utf-8") as fh:
+        tsv_rows = [l for l in fh.read().replace("\r\n", "\n").split("\n")
+                    if l.strip() and not l.startswith("#")]
+
+    def unescape(s: str) -> str:
+        # the TSV stores newlines/tabs/quotes as escapes because it is a line-oriented
+        # format; the .strings parser has already decoded them, so decode here too.
+        out, i = [], 0
+        while i < len(s):
+            if s[i] == "\\" and i + 1 < len(s):
+                nxt = s[i + 1]
+                if nxt == "n":
+                    out.append("\n")
+                elif nxt == "t":
+                    out.append("\t")
+                elif nxt == "r":
+                    out.append("\r")
+                elif nxt == '"':
+                    out.append('"')
+                elif nxt == "\\":
+                    out.append("\\")
+                else:
+                    out.append(s[i: i + 2])
+                i += 2
+                continue
+            out.append(s[i])
+            i += 1
+        return "".join(out)
+
+    tsv_keys = [unescape(r.split("\t")[0]) for r in tsv_rows if "\t" in r]
+    tsv_values = {unescape(r.split("\t")[0]): unescape(r.split("\t")[1])
+                  for r in tsv_rows if "\t" in r and len(r.split("\t")) == 2}
+    with open(os.path.join(REPO, "scripts", "i18n", "keep_english.txt"),
+              encoding="utf-8") as fh:
+        keep = {l.lstrip() for l in fh.read().replace("\r", "").split("\n")
+                if l.strip() and not l.lstrip().startswith("#")}
+    lines.append(f"tsv rows = {len(tsv_rows)} (unique {len(set(tsv_keys))}); "
+                 f"keep_english = {len(keep)}")
+    dup_tsv = {k for k in tsv_keys if tsv_keys.count(k) > 1}
+    if dup_tsv:
+        bad = True
+        lines.append(f"    duplicate tsv rows: {sorted(dup_tsv)[:5]}")
+    if len(tsv_rows) != len(tsv_keys):
+        bad = True
+        lines.append(f"    {len(tsv_rows) - len(tsv_keys)} tsv row(s) are not key<TAB>value")
+    uncovered = [k for k in keys if k not in set(tsv_keys) and k not in keep]
+    stale_keep = sorted(k for k in keep if k not in keys)
+    if uncovered:
+        bad = True
+        lines.append(f"    {len(uncovered)} key(s) in neither tsv nor keep_english: "
+                     f"{uncovered[:3]}")
+    if stale_keep:
+        bad = True
+        lines.append(f"    {len(stale_keep)} stale keep_english entr(ies): {stale_keep[:3]}")
+
+    # 2b. rendered value must equal the tsv value (or the key, when kept in English)
+    mismatched = []
+    for e in res.entries:
+        if e.key in keep:
+            expected = e.key
+        elif e.key in tsv_values:
+            expected = tsv_values[e.key]
+        else:
+            continue
+        if expected != e.value:
+            mismatched.append(e.key)
+    if mismatched:
+        bad = True
+        lines.append(f"    {len(mismatched)} rendered value(s) disagree with the tsv: "
+                     f"{mismatched[:3]}")
+
+    # 3. every value==key entry must be whitelisted (i.e. a deliberate keep-English)
+    unlisted = [e.key for e in res.entries if e.key == e.value and e.key not in keep]
+    if unlisted:
+        bad = True
+        lines.append(f"    {len(unlisted)} untranslated-but-not-whitelisted: {unlisted[:3]}")
+
+    # 4. nothing previously shipped may disappear
+    base = subprocess.run(
+        ["git", "show", "HEAD:AltStore/zh-Hans.lproj/Localizable.strings"],
+        capture_output=True, text=True, cwd=REPO,
+    )
+    if base.returncode == 0:
+        bparsed = StringsParser(base.stdout).parse()
+        basekeys = {e.key for e in bparsed.entries}
+        removed = sorted(basekeys - keys)
+        added = sorted(keys - basekeys)
+        lines.append(f"baseline (HEAD) = {len(basekeys)} keys; removed = {len(removed)}; "
+                     f"added = {len(added)}; net = {len(keys) - len(basekeys):+d}")
+        if removed:
+            bad = True
+            lines.append("    DROPPED keys (translations lost): " + repr(removed[:5]))
+        if bparsed.errors:
+            lines.append(f"    note: HEAD version had {len(bparsed.errors)} parse error(s)")
+    else:
+        lines.append("    (no committed baseline available - skipped drop check)")
+
+    # 5. every new key must be traceable to source verbatim
+    if base.returncode == 0:
+        new_keys = [k for k in keys if k not in basekeys]
+        src = source_string_set()
+        untraceable = [k for k in new_keys if k not in src]
+        lines.append(f"new keys traceable to source: {len(new_keys) - len(untraceable)}"
+                     f"/{len(new_keys)}")
+        if untraceable:
+            bad = True
+            lines.append(f"    new keys with no source literal: {untraceable[:5]}")
+
+    emit("G. pipeline integrity / coverage / no dropped keys",
+         "FAIL" if bad else "PASS", lines)
+
+
 def main() -> None:
     check_syntax()
     check_placeholders()
@@ -257,6 +396,7 @@ def main() -> None:
     check_version_format()
     check_info_plist()
     check_infoplist_strings()
+    check_pipeline_integrity()
     print("\n\n==== SUMMARY ====")
     for section, verdict, _ in RESULTS:
         print(f"  {verdict:5s}  {section}")

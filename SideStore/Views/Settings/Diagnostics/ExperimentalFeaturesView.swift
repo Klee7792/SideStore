@@ -94,7 +94,7 @@ struct ExperimentalFeaturesView: View {
         #endif
     }
 
-    private func toggleRow(title: String, isOn: Binding<Bool>) -> some View {
+    private func toggleRow(title: LocalizedStringKey, isOn: Binding<Bool>) -> some View {
         HStack {
             Text(title)
                 .font(.system(size: 17, weight: .bold))

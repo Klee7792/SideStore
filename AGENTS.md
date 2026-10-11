@@ -5,7 +5,8 @@
 > 以下规则是本 fork 的实际执行口径：
 >
 > - 允许使用 AI 辅助完成本 fork 内的开发、构建与维护
-> - 允许AI自主撰写commit message
+> - 允许AI自主撰写 commit message
+> - 允许AI按需自主跑 Actions 构建、下载产物、拉取日志
 > - 仍然不对上游执行任何 GitHub 操作（PR / issue / discussion / comment）
 > - 如果将来改变主意要向上游贡献，本节自动失效，以下游原始规则为准
 

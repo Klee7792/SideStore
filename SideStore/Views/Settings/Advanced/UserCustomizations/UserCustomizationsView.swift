@@ -531,7 +531,7 @@ struct UserCustomizationsView: View {
         }
     }
 
-    private func toggleRow(title: String, subtitle: String? = nil, isOn: Binding<Bool>) -> some View {
+    private func toggleRow(title: LocalizedStringKey, subtitle: LocalizedStringKey? = nil, isOn: Binding<Bool>) -> some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
@@ -556,8 +556,8 @@ struct UserCustomizationsView: View {
     }
 
     private func textFieldRow(
-        title: String,
-        subtitle: String? = nil,
+        title: LocalizedStringKey,
+        subtitle: LocalizedStringKey? = nil,
         placeholder: String,
         value: String,
         unit: String? = nil,
