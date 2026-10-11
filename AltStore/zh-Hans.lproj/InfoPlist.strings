@@ -1,0 +1,18 @@
+/* InfoPlist.strings (Simplified Chinese)
+   SideStore
+
+   NOTE: CFBundleDisplayName / CFBundleName are deliberately NOT localized.
+   "SideStore" is a proper noun, and Apple recommends leaving CFBundleName
+   untranslated because it determines the folder name shown in Finder / iTunes
+   file sharing (this app sets UIFileSharingEnabled). Changing it here would
+   only be correct while PRODUCT_NAME stays "SideStore".
+*/
+
+/* Privacy - Local Network Usage Description */
+"NSLocalNetworkUsageDescription" = "SideStore 可使用本地网络访问来发现你所在网络中的 Bonjour (mDNS) 服务。核心功能并不依赖此权限。";
+
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "SideStore 使用位置更新来保持后台操作持续运行。";
+
+/* Privacy - Location Always and When In Use Usage Description */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "SideStore 使用位置更新来保持后台操作持续运行。";

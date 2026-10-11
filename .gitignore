@@ -78,9 +78,12 @@ release-notes.md
 !AGENTS.md
 !CLAUDE.md
 !GEMINI.md
+!docs/i18n-glossary.md
 *.log
 *.pdf
 *.txt
+!scripts/i18n/keep_english.txt
+scripts/i18n/extracted.json
 
 Dependencies/minimuxer-*/
 .test/

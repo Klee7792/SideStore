@@ -1,0 +1,45 @@
+# Keys that deliberately keep their English value in zh-Hans.
+# Each row is rendered as:  "key" = "key";  with a /* DO NOT TRANSLATE */ comment.
+#
+# This list is maintained together with translations_zh_Hans.tsv: a row is
+# listed here whenever the Chinese value is intentionally identical to the key.
+#
+# Typical cases:
+#   * values with no translatable prose (pure placeholders, separators, masks)
+#   * product / brand names and Apple API, file or configuration identifiers
+#   * identifier names used verbatim as UI labels
+#
+# IMPORTANT: leading whitespace is ignored, trailing whitespace is significant
+# (a few keys end with a space). One key per line, '#' starts a comment.
+%@ %@
+-
+1
+1.0.0
+15.0
+ANISETTE
+App Groups
+App ID
+App IDs
+Apple ID
+Apple TV
+Apple Watch
+Bundle Identifier
+CarPlay
+Discord
+GitHub
+Info.plist
+LocalDevVPN
+MINIMUXER
+Mac
+SIDESIGN
+SideJITServer
+SideStore
+Vision Pro
+XML
+https://...
+iPad
+iPhone
+ms
+•
+••••••••••••••••••••••••••••
+⚠️ 

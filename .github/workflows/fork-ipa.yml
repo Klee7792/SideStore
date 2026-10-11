@@ -1,0 +1,86 @@
+name: Fork IPA Build
+
+# 自用 fork 的 IPA 构建流程。
+#
+# 参照上游 .github/workflows/alpha.yml，但去掉了所有需要 secrets 的发布步骤：
+#   - 跨仓库推送 SideStore/apps-v2.json（需要 secrets.CROSS_REPO_PUSH_KEY，fork 不继承该 secret）
+#   - 生成 source-metadata.json 并上传到 GitHub Release
+#   - deploy 到 sidestore.io 源
+# 本流程只保留「构建 + fake-sign + 打包 IPA」，以 Actions artifact 形式提供下载。
+#
+# 触发方式：Actions 页 → Fork IPA Build → Run workflow（默认手动，避免每次 push 都烧 macOS 额度）
+# 如需 push 自动触发，取消下面 on.push 段的注释即可。
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_config:
+        description: 'Build configuration'
+        required: false
+        default: 'Release'
+        type: choice
+        options:
+          - Release
+          - Debug
+  # push:
+  #   branches: [develop]
+  #   paths-ignore:
+  #     - '**.md'
+  #     - 'docs/**'
+  #     - 'scripts/i18n/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.ref }}-fork-ipa
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-26
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Install build tools
+        run: brew install ldid xcbeautify
+
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1.6.0
+        with:
+          xcode-version: '26.2'
+
+      - name: Show toolchain versions
+        run: |
+          xcodebuild -version
+          swift --version
+
+      # 复用上游自己的构建脚本：make -B build && make fakesign && make ipa
+      # 产物为仓库根目录的 SideStore.ipa 与 SideStore.dSYMs.zip
+      - name: Build, fake-sign and package IPA
+        env:
+          BUILD_CONFIG: ${{ inputs.build_config || 'Release' }}
+        run: python3 scripts/ci/workflow.py build
+
+      - name: Verify IPA was produced
+        run: |
+          if [ ! -f SideStore.ipa ]; then
+            echo "::error::SideStore.ipa was not produced"
+            exit 1
+          fi
+          ls -lh SideStore.ipa SideStore.dSYMs.zip
+          unzip -l SideStore.ipa | tail -3
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: SideStore-${{ github.sha }}
+          path: |
+            SideStore.ipa
+            SideStore.dSYMs.zip
+          retention-days: 14
+          if-no-files-found: error

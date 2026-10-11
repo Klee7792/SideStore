@@ -29,7 +29,9 @@ public extension Bundle
             let info = activeBundle.infoDictionary
             let version = (info?["CFBundleShortVersionString"] as? String) ?? "?.?.?"
             let build = (info?["CFBundleVersion"] as? String).map { " (\($0))" } ?? "(????)"
-            return NSLocalizedString(String(format: "Version %@%@", version, build), comment: "SideStore Version")
+            // The key must stay a literal so localization tooling can extract it.
+            let format = NSLocalizedString("Version %1$@%2$@", comment: "SideStore Version")
+            return String(format: format, version, build)
         }()
         public static let activeBundleIdentifier: String = activeBundle.bundleIdentifier!
         public static let storeAppBundleIdentifier = Bundle.storeAppBundleIdentifier
