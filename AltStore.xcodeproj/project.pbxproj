@@ -126,10 +126,10 @@
 				Components/tvOS/AppBannerView.xib = (
 					tvos,
 				);
-				"Base.lproj/InstalledAppsCollectionHeaderView.xib" = (
+				Base.lproj/InstalledAppsCollectionHeaderView.xib = (
 					ios,
 				);
-				"Base.lproj/UpdateCollectionViewCell.xib" = (
+				Base.lproj/UpdateCollectionViewCell.xib = (
 					ios,
 				);
 				"My Apps/tvOS/InstalledAppsCollectionHeaderView.xib" = (

@@ -690,12 +690,54 @@ def gate_change_scope() -> Gate:
     # maintainer edits outside of any localization change.
     allowed_files: tuple[str, ...] = (".gitignore", "AGENTS.md")
 
+    # The Base Internationalization fix moves the iOS interface files into
+    # AltStore/Base.lproj/, which requires rewriting their paths inside
+    # platformFiltersByRelativePath of the SideStore exception set. The project
+    # file is therefore in scope, but only for that one mechanical rewrite --
+    # anything else touching project.pbxproj still fails the gate.
+    sanctioned_pbxproj_moves: dict[str, str] = {
+        "Authentication/Authentication.storyboard": "Base.lproj/Authentication.storyboard",
+        "Components/AppBannerView.xib": "Base.lproj/AppBannerView.xib",
+        "My Apps/InstalledAppsCollectionHeaderView.xib": "Base.lproj/InstalledAppsCollectionHeaderView.xib",
+        "My Apps/UpdateCollectionViewCell.xib": "Base.lproj/UpdateCollectionViewCell.xib",
+        "News/NewsCollectionViewCell.xib": "Base.lproj/NewsCollectionViewCell.xib",
+        "Settings/AboutPatreonHeaderView.xib": "Base.lproj/AboutPatreonHeaderView.xib",
+        "Settings/Settings.storyboard": "Base.lproj/Settings.storyboard",
+        "Settings/SettingsHeaderFooterView.xib": "Base.lproj/SettingsHeaderFooterView.xib",
+        "Sources/Components/SourceHeaderView.xib": "Base.lproj/SourceHeaderView.xib",
+        "Sources/Sources.storyboard": "Base.lproj/Sources.storyboard",
+        "iOS/Main.storyboard": "Base.lproj/Main.storyboard",
+    }
+
     for path in changed:
         path = path.replace("\\", "/")
         if any(path.startswith(prefix) for prefix in FORBIDDEN_PATHS):
             gate.fail(f"out-of-scope file changed: {path}")
             continue
         if path in allowed_files:
+            continue
+        if path == "AltStore.xcodeproj/project.pbxproj":
+            diff_text = _git_diff_text(path)
+            added = [line[1:].strip() for line in diff_text.splitlines()
+                     if line.startswith("+") and not line.startswith("+++")]
+            removed = [line[1:].strip() for line in diff_text.splitlines()
+                       if line.startswith("-") and not line.startswith("---")]
+            # None of the Base.lproj paths contain a space, so none are quoted;
+            # the two that replaced "My Apps/..." paths were unquoted for
+            # consistency with their siblings.
+            expected_added = {f"{v} = (" for v in sanctioned_pbxproj_moves.values()}
+            expected_removed = {f'"{k}" = (' if " " in k else f"{k} = ("
+                                for k in sanctioned_pbxproj_moves}
+            unexpected_added = sorted(set(added) - expected_added)
+            unexpected_removed = sorted(set(removed) - expected_removed)
+            if unexpected_added or unexpected_removed:
+                gate.fail(
+                    "project.pbxproj changed outside the sanctioned Base.lproj "
+                    f"path rewrite: +{unexpected_added} -{unexpected_removed}"
+                )
+            missing_added = sorted(expected_added - set(added))
+            if missing_added:
+                gate.fail(f"project.pbxproj is missing the Base.lproj paths: {missing_added}")
             continue
         if not any(path.startswith(prefix) for prefix in allowed_prefixes):
             gate.fail(f"unexpected file changed: {path}")
