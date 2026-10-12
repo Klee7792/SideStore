@@ -114,22 +114,22 @@
 				Resources/ReleaseEntitlements.plist,
 			);
 			platformFiltersByRelativePath = {
-				Authentication/Authentication.storyboard = (
+				Base.lproj/Authentication.storyboard = (
 					ios,
 				);
 				Authentication/tvOS/Authentication.storyboard = (
 					tvos,
 				);
-				Components/AppBannerView.xib = (
+				Base.lproj/AppBannerView.xib = (
 					ios,
 				);
 				Components/tvOS/AppBannerView.xib = (
 					tvos,
 				);
-				"My Apps/InstalledAppsCollectionHeaderView.xib" = (
+				"Base.lproj/InstalledAppsCollectionHeaderView.xib" = (
 					ios,
 				);
-				"My Apps/UpdateCollectionViewCell.xib" = (
+				"Base.lproj/UpdateCollectionViewCell.xib" = (
 					ios,
 				);
 				"My Apps/tvOS/InstalledAppsCollectionHeaderView.xib" = (
@@ -138,19 +138,19 @@
 				"My Apps/tvOS/UpdateCollectionViewCell.xib" = (
 					tvos,
 				);
-				News/NewsCollectionViewCell.xib = (
+				Base.lproj/NewsCollectionViewCell.xib = (
 					ios,
 				);
 				News/tvOS/NewsCollectionViewCell.xib = (
 					tvos,
 				);
-				Settings/AboutPatreonHeaderView.xib = (
+				Base.lproj/AboutPatreonHeaderView.xib = (
 					ios,
 				);
-				Settings/Settings.storyboard = (
+				Base.lproj/Settings.storyboard = (
 					ios,
 				);
-				Settings/SettingsHeaderFooterView.xib = (
+				Base.lproj/SettingsHeaderFooterView.xib = (
 					ios,
 				);
 				Settings/tvOS/AboutPatreonHeaderView.xib = (
@@ -162,13 +162,13 @@
 				Settings/tvOS/SettingsHeaderFooterView.xib = (
 					tvos,
 				);
-				Sources/Components/SourceHeaderView.xib = (
+				Base.lproj/SourceHeaderView.xib = (
 					ios,
 				);
 				Sources/Components/tvOS/SourceHeaderView.xib = (
 					tvos,
 				);
-				Sources/Sources.storyboard = (
+				Base.lproj/Sources.storyboard = (
 					ios,
 				);
 				Sources/tvOS/Sources.storyboard = (
@@ -177,7 +177,7 @@
 				iOS/LaunchScreen.storyboard = (
 					ios,
 				);
-				iOS/Main.storyboard = (
+				Base.lproj/Main.storyboard = (
 					ios,
 				);
 				tvOS/Main.storyboard = (
