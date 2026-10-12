@@ -87,6 +87,24 @@
 /* No comment provided by engineer. */
 "%d Pending Actions" = "%d 项待处理操作";
 
+/* No comment provided by engineer. */
+"%lld active on portal" = "门户网站上有 %lld 个生效";
+
+/* No comment provided by engineer. */
+"%lld configured" = "已配置 %lld 个";
+
+/* No comment provided by engineer. */
+"%lld devices" = "%lld 台设备";
+
+/* No comment provided by engineer. */
+"%lld registered" = "已注册 %lld 个";
+
+/* No comment provided by engineer. */
+"%lld registered on portal" = "门户网站上有 %lld 个已注册";
+
+/* No comment provided by engineer. */
+"'Device IP' and 'RemotePair Port' are optional and if specified should match exactly as in the target VPN's config or Leave empty to prefer auto-discovery/default port %@." = "'Device IP' 与 'RemotePair Port' 均为可选项；若填写，须与目标 VPN 配置完全一致；留空则优先自动发现或使用默认端口 %@。";
+
 /* SwiftUI Text */
 "**Settings -> apps -> SideStore -> LocalNetworkAccess = toggle on**" = "**设置 -> apps -> SideStore -> LocalNetworkAccess = 打开开关**";
 
@@ -175,7 +193,7 @@
 /* No comment provided by engineer. */
 "Activate %@ Failed" = "启用 %@ 失败";
 
-/* SwiftUI Text */
+/* SwiftUI networkConfigRow(label) */
 "Active" = "已启用";
 
 /* SwiftUI Section */
@@ -544,6 +562,12 @@
 /* SwiftUI Text */
 "Binary Summary" = "二进制摘要";
 
+/* SwiftUI networkConfigRow(label) */
+"Bind Host / IP" = "绑定主机 / IP";
+
+/* SwiftUI networkConfigRow(label) */
+"Bind Port" = "绑定端口";
+
 /* SwiftUI Picker */
 "Boolean Value" = "布尔值";
 
@@ -678,7 +702,7 @@
 /* SwiftUI toggleRow(title) */
 "Checksum (SHA-256) Check" = "校验和（SHA-256）校验";
 
-/* UIAlertController message */
+/* No comment provided by engineer. */
 "Choose a method to send feedback:" = "选择发送反馈的方式：";
 
 /* No comment provided by engineer. */
@@ -1002,6 +1026,12 @@
 /* SwiftUI Text */
 "DATABASE OPTIONS" = "数据库选项";
 
+/* SwiftUI metadataRow(label) */
+"Date Created" = "创建日期";
+
+/* SwiftUI metadataRow(label) */
+"Date Modified" = "修改日期";
+
 /* SwiftUI Label */
 "Deactivate" = "停用";
 
@@ -1170,6 +1200,9 @@
 /* SwiftUI Text */
 "Device Information" = "设备信息";
 
+/* SwiftUI networkConfigRow(label) */
+"Device IP" = "设备 IP";
+
 /* SwiftUI TextField */
 "Device Name" = "设备名称";
 
@@ -1221,7 +1254,7 @@
 /* SwiftUI Text */
 "Disabled" = "已停用";
 
-/* UIAlertAction title */
+/* No comment provided by engineer. */
 /* DO NOT TRANSLATE */
 "Discord" = "Discord";
 
@@ -1663,8 +1696,14 @@
 /* SwiftUI Text */
 "FILE INFORMATION" = "文件信息";
 
+/* SwiftUI metadataRow(label) */
+"File Name" = "文件名";
+
 /* SwiftUI SecureField */
 "File Password" = "文件密码";
+
+/* SwiftUI metadataRow(label) */
+"File Size" = "文件大小";
 
 /* SwiftUI Text */
 "Fill Current Device Name" = "填入当前设备名称";
@@ -1729,7 +1768,7 @@
 /* No comment provided by engineer. */
 "Get Started" = "开始使用";
 
-/* UIAlertAction title */
+/* No comment provided by engineer. */
 /* DO NOT TRANSLATE */
 "GitHub" = "GitHub";
 
@@ -1752,6 +1791,9 @@
 /* SwiftUI infoTokenRow(subtitle) */
 "Hardware identifier computed from adi.pb and device identity" = "根据 adi.pb 和设备身份计算出的硬件标识符";
 
+/* SwiftUI identifierRow(label) */
+"Hardware UDID" = "硬件 UDID";
+
 /* SwiftUI detailRow(title) */
 "Has Private Key" = "包含私钥";
 
@@ -1766,6 +1808,9 @@
 
 /* SwiftUI Text */
 "Hidden" = "已隐藏";
+
+/* SwiftUI identifierRow(label) */
+"HostID" = "主机 ID";
 
 /* No comment provided by engineer. */
 "How do I get a pairing file?" = "如何获取配对文件？";
@@ -1992,6 +2037,9 @@
 
 /* SwiftUI alert */
 "Key Added" = "已添加密钥";
+
+/* SwiftUI infoRow(label) */
+"Key Material" = "密钥材料";
 
 /* SwiftUI Text */
 "Key Name" = "键名称";
@@ -2600,6 +2648,9 @@
 /* No comment provided by engineer. */
 "Protocol Mismatch" = "协议不匹配";
 
+/* SwiftUI metadataRow(label) */
+"Protocol Type" = "协议类型";
+
 /* SwiftUI headerFieldRow(title) */
 "Protocol Version" = "协议版本";
 
@@ -2614,6 +2665,9 @@
 
 /* SwiftUI Text */
 "Provisioning Profiles" = "描述文件";
+
+/* No comment provided by engineer. */
+"Provisioning Profiles (%lld)" = "描述文件（%lld）";
 
 /* SwiftUI Text */
 "Provisioning profiles dictate entitlements, device permissions, and expiration dates. Profiles sync automatically with your developer account." = "描述文件决定了权限、设备许可与过期时间。描述文件会自动与你的开发者账户同步。";
@@ -2647,6 +2701,9 @@
 
 /* SwiftUI Text */
 "Raw JSON" = "原始 JSON";
+
+/* SwiftUI networkConfigRow(label) */
+"Reachable" = "可达";
 
 /* SwiftUI Text */
 "Ready" = "就绪";
@@ -2725,6 +2782,9 @@
 
 /* SwiftUI Label */
 "Remote Server Sync" = "远程服务器同步";
+
+/* SwiftUI networkConfigRow(label) */
+"RemotePair Port" = "远程配对端口";
 
 /* No comment provided by engineer. */
 "REMOVE" = "移除";
@@ -3026,10 +3086,10 @@
 /* SwiftUI pipelineStepToggles entry */
 "Send App" = "发送应用";
 
-/* UIAlertAction title */
+/* No comment provided by engineer. */
 "Send Email" = "发送邮件";
 
-/* UIAlertController title */
+/* No comment provided by engineer. */
 "Send Feedback" = "发送反馈";
 
 /* SwiftUI headerFieldRow(title) */
@@ -3347,6 +3407,9 @@
 /* SwiftUI standaloneStepToggles entry */
 "Sync App IDs" = "同步 App ID";
 
+/* SwiftUI identifierRow(label) */
+"SystemBUID" = "系统 BUID";
+
 /* SwiftUI Text */
 "Tap a permission to learn more." = "轻点某项权限以了解更多。";
 
@@ -3370,6 +3433,9 @@
 
 /* No comment provided by engineer. */
 "Text Message (SMS) (Recommended)" = "短信（SMS）（推荐）";
+
+/* No comment provided by engineer. */
+"Thank you for using SideStore!\n\nSubscribing to the Patreon supports us and makes sure we can continue developing SideStore for you.\n\nFollowing us on social media allows us to give quick updates and spread the word about sideloading!\n\n-SideTeam" = "感谢你使用 SideStore！\n\n订阅 Patreon 支持我们，让我们能继续为你开发 SideStore。\n\n在社交媒体上关注我们，可以第一时间获取更新，也让更多人了解侧载！\n\n— SideTeam";
 
 /* No comment provided by engineer. */
 "The %@ '%@' for %@ is missing a usage description." = "%3$@ 的 %1$@“%2$@”缺少用途说明。";
@@ -3565,6 +3631,9 @@
 
 /* No comment provided by engineer. */
 "Try Again" = "重试";
+
+/* SwiftUI networkConfigRow(label) */
+"Tunnel IP" = "隧道 IP";
 
 /* SwiftUI textFieldRow(title) */
 "Turn Off Base Delay" = "关闭数据后的基础延迟";
@@ -3824,6 +3893,9 @@
 
 /* SwiftUI LocalizedStringKey binding */
 "Widget Verbose Logging" = "Widget 详细日志";
+
+/* SwiftUI identifierRow(label) */
+"WiFi MAC" = "WiFi MAC 地址";
 
 /* SwiftUI toggleRow(title) */
 "Wipe Database on Next Start" = "下次启动时清空数据库";

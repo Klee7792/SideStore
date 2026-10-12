@@ -98,7 +98,7 @@ struct ProfileManagementView: View {
                 }
 
                 Section(
-                    header: Text("Provisioning Profiles (\(filteredProfiles.count))"),
+                    header: Text(verbatim: String(format: NSLocalizedString("Provisioning Profiles (%lld)", comment: ""), filteredProfiles.count)),
                     footer: Text("Provisioning profiles dictate entitlements, device permissions, and expiration dates. Profiles sync automatically with your developer account.")
                 ) {
                     if filteredProfiles.isEmpty {

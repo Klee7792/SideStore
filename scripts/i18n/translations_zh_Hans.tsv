@@ -1306,3 +1306,27 @@ Rotate Top Shelf Log	轮换 Top Shelf 日志
 Rotate Widget Log	轮换 Widget 日志
 TOP SHELF OPTIONS	Top Shelf 选项
 WIDGET OPTIONS	Widget 选项
+%lld active on portal	门户网站上有 %lld 个生效
+%lld configured	已配置 %lld 个
+%lld devices	%lld 台设备
+%lld registered	已注册 %lld 个
+%lld registered on portal	门户网站上有 %lld 个已注册
+'Device IP' and 'RemotePair Port' are optional and if specified should match exactly as in the target VPN's config or Leave empty to prefer auto-discovery/default port %@.	'Device IP' 与 'RemotePair Port' 均为可选项；若填写，须与目标 VPN 配置完全一致；留空则优先自动发现或使用默认端口 %@。
+Bind Host / IP	绑定主机 / IP
+Bind Port	绑定端口
+Date Created	创建日期
+Date Modified	修改日期
+Device IP	设备 IP
+File Name	文件名
+File Size	文件大小
+Hardware UDID	硬件 UDID
+HostID	主机 ID
+Key Material	密钥材料
+Protocol Type	协议类型
+Provisioning Profiles (%lld)	描述文件（%lld）
+Reachable	可达
+RemotePair Port	远程配对端口
+SystemBUID	系统 BUID
+Thank you for using SideStore!\n\nSubscribing to the Patreon supports us and makes sure we can continue developing SideStore for you.\n\nFollowing us on social media allows us to give quick updates and spread the word about sideloading!\n\n-SideTeam	感谢你使用 SideStore！\n\n订阅 Patreon 支持我们，让我们能继续为你开发 SideStore。\n\n在社交媒体上关注我们，可以第一时间获取更新，也让更多人了解侧载！\n\n— SideTeam
+Tunnel IP	隧道 IP
+WiFi MAC	WiFi MAC 地址

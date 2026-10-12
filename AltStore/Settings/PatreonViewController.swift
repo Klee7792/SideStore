@@ -103,6 +103,10 @@ final class AboutPatreonHeaderView: UICollectionReusableView
         self.textView.clipsToBounds = true
         self.textView.layer.cornerRadius = 20
         self.textView.textContainer.lineFragmentPadding = 0
+
+        // UIKit's nib <NibName>.strings override does not reach UITextView.text, so the
+        // localized copy for this label is applied here instead of via the .strings table.
+        self.textView.text = NSLocalizedString("Thank you for using SideStore!\n\nSubscribing to the Patreon supports us and makes sure we can continue developing SideStore for you.\n\nFollowing us on social media allows us to give quick updates and spread the word about sideloading!\n\n-SideTeam", comment: "")
         
         for imageView in [self.teamIcon].compactMap({$0})
         {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public protocol BackgroundService: Sendable {
     var isRunning: Bool { get }
@@ -33,7 +34,7 @@ public enum BackgroundServiceMode: String, CaseIterable, Sendable {
         }
     }
 
-    public var subtitle: String {
+    public var subtitle: LocalizedStringKey {
         switch self {
         case .audio:
             return "Silent keepalive background audio loop"

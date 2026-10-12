@@ -206,7 +206,7 @@ struct PairingFileDetailView: View {
         }
     }
 
-    private func metadataRow(label: String, value: String, valueColor: Color = .white) -> some View {
+    private func metadataRow(label: LocalizedStringKey, value: String, valueColor: Color = .white) -> some View {
         HStack {
             Text(label)
                 .font(.system(size: 15))

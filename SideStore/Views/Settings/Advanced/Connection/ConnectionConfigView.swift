@@ -123,7 +123,7 @@ struct ConnectionConfigView: View {
                     } footer: {
                         HStack(alignment: .top, spacing: 0) {
                             Text("Note: ")
-                            Text("'Device IP' and 'RemotePair Port' are optional and if specified should match exactly as in the target VPN's config or Leave empty to prefer auto-discovery/default port \(String(AppConstants.Minimuxer.remotePairingPort)).")
+                            Text(verbatim: String(format: NSLocalizedString("'Device IP' and 'RemotePair Port' are optional and if specified should match exactly as in the target VPN's config or Leave empty to prefer auto-discovery/default port %@.", comment: ""), String(AppConstants.Minimuxer.remotePairingPort)))
                         }
                     }
                 } else {

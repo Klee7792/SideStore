@@ -119,6 +119,10 @@ LOCALIZABLE_FUNC_PARAMS: dict[str, frozenset[str | None]] = {
     "detailRowWithCopy": frozenset({"title"}),
     "infoTokenRow": frozenset({"title", "subtitle"}),
     "headerFieldRow": frozenset({"title"}),
+    "metadataRow": frozenset({"label"}),      # PairingFileDetailView.swift:209
+    "infoRow": frozenset({"label"}),          # PairingFileManagementView.swift:408
+    "identifierRow": frozenset({"label"}),    # PairingFileManagementView.swift:386
+    "networkConfigRow": frozenset({"label"}), # ConnectionConfigView.swift:352
 }
 
 #: File-scope lookup tables whose elements are ``(name: LocalizedStringKey,

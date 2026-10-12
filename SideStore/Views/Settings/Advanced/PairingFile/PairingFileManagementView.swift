@@ -383,7 +383,7 @@ struct PairingFileManagementView: View {
         .frame(height: 56)
     }
 
-    private func identifierRow(label: String, value: String, fieldKey: String) -> some View {
+    private func identifierRow(label: LocalizedStringKey, value: String, fieldKey: String) -> some View {
         let isRevealed = !viewModel.isGlobalHideActive || viewModel.revealedFieldKeys.contains(fieldKey)
         let displayValue = isRevealed ? value : "••••••••••••••••"
 
@@ -405,7 +405,7 @@ struct PairingFileManagementView: View {
         .buttonStyle(.plain)
     }
 
-    private func infoRow(label: String, value: String, isMonospaced: Bool = false) -> some View {
+    private func infoRow(label: LocalizedStringKey, value: String, isMonospaced: Bool = false) -> some View {
         HStack {
             Text(label)
                 .font(.system(size: 14))
