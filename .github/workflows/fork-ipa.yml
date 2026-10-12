@@ -87,12 +87,32 @@ jobs:
             ls -1 "$d"
           done
 
+      - name: Compute version label
+        run: |
+          MARKETING_VERSION=$(python3 scripts/ci/workflow.py get-marketing-version)
+          SHORT_COMMIT=$(python3 scripts/ci/workflow.py commit-id)
+          IPA_VERSION=$(python3 scripts/ci/workflow.py compute-normalized \
+              "$MARKETING_VERSION" "${{ github.run_number }}" "$SHORT_COMMIT")
+          echo "IPA_VERSION=$IPA_VERSION" >> "$GITHUB_ENV"
+          echo "Artifact version label: $IPA_VERSION"
+
+      # 与上游 alpha.yml 一致：IPA 与 dSYMs 分成两个独立 artifact。
+      # 二者不是两个 app 版本，而是两类构建产物：
+      #   SideStore-<version>.ipa        可安装的 App（巨魔/TrollStore 直接装这个）
+      #   SideStore-<version>-dSYMs.zip 调试符号表，仅用于把崩溃日志的地址符号化，
+      #                                 日常使用完全不需要，单独存放可避免每次白下 40MB。
       - name: Upload IPA
         uses: actions/upload-artifact@v5
         with:
-          name: SideStore-${{ github.sha }}
-          path: |
-            SideStore.ipa
-            SideStore.dSYMs.zip
+          name: SideStore-${{ env.IPA_VERSION }}.ipa
+          path: SideStore.ipa
+          retention-days: 14
+          if-no-files-found: error
+
+      - name: Upload dSYMs
+        uses: actions/upload-artifact@v5
+        with:
+          name: SideStore-${{ env.IPA_VERSION }}-dSYMs.zip
+          path: SideStore.dSYMs.zip
           retention-days: 14
           if-no-files-found: error
